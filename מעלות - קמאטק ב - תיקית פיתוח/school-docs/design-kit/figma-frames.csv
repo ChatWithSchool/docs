@@ -1,0 +1,72 @@
+﻿Figma Page,Frame Name,Size,Screen,Dev,Status,States To Draw,Spec Link
+04 Screens / Dashboard,SCR-X01 · מסגרת האפליקציה (Shell) / Desktop 1440,Desktop 1440,X01,,תשתית,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-X01.html
+04 Screens / Dashboard,"SCR-X02 · מצבי מערכת משותפים (טעינה, ריק, שגיאה, 403, 404) / Desktop 1440",Desktop 1440,X02,,תשתית,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-X02.html
+04 Screens / Dashboard,SCR-X03 · דשבורד מנהל / Desktop 1440,Desktop 1440,X03,C-06,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-X03.html
+04 Screens / Login & Account,SCR-A01 · התחברות / Desktop 1440,Desktop 1440,A01,,תשתית,ברירת מחדל; טעינה; ריק; שגיאה; טוען: כפתור כבוי עם חיווי; נעול: הודעה עם זמן המתנה,screens/SCR-A01.html
+04 Screens / Login & Account,SCR-A02 · הצטרפות בהזמנה (הגדרת חשבון) / Desktop 1440,Desktop 1440,A02,B-01,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-A02.html
+04 Screens / Login & Account,SCR-A03 · שכחתי סיסמה ואיפוס / Desktop 1440,Desktop 1440,A03,C-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-A03.html
+04 Screens / Settings,SCR-A04 · ניהול משתמשים והרשאות / Desktop 1440,Desktop 1440,A04,B-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'אין עדיין משתמשים. הזמיני את הראשון.',screens/SCR-A04.html
+04 Screens / Login & Account,SCR-A05 · ההרשאות שלי / Desktop 1440,Desktop 1440,A05,C-01,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-A05.html
+04 Screens / Login & Account,SCR-A06 · אבטחת החשבון שלי / Desktop 1440,Desktop 1440,A06,C-01,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-A06.html
+04 Screens / Login & Account,SCR-A06.1 · אבטחת החשבון שלי · יומן הפעילות שלי / Desktop 1440,Desktop 1440,A06,C-01,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-A06.html
+04 Screens / Login & Account,SCR-A06.2 · אבטחת החשבון שלי · סיסמה / Desktop 1440,Desktop 1440,A06,C-01,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-A06.html
+04 Screens / Settings,SCR-A07 · הזמנת משתמשים והזמנות ממתינות / Desktop 1440,Desktop 1440,A07,B-01,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'אין הזמנות ממתינות.',screens/SCR-A07.html
+04 Screens / Settings,SCR-A07.1 · הזמנת משתמשים והזמנות ממתינות · ממתינות / Desktop 1440,Desktop 1440,A07,B-01,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'אין הזמנות ממתינות.',screens/SCR-A07.html
+04 Screens / Settings,SCR-A08 · קישור הורה לתלמיד / Desktop 1440,Desktop 1440,A08,B-03,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-A08.html
+04 Screens / Settings,SCR-A09 · תפקידים מותאמים ופרטיות / Desktop 1440,Desktop 1440,A09,B-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-A09.html
+04 Screens / Settings,SCR-A09.1 · תפקידים מותאמים ופרטיות · נראות מידע / Desktop 1440,Desktop 1440,A09,B-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-A09.html
+04 Screens / Settings,SCR-I01 · אשף הקמת מוסד: מבנה בית הספר / Desktop 1440,Desktop 1440,I01,B-04,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I01.html
+04 Screens / Staff,SCR-I02 · ייבוא צוות הוראה מקובץ / Desktop 1440,Desktop 1440,I02,C-03,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I02.html
+04 Screens / Settings,SCR-I03 · פרטי המוסד והגדרות / Desktop 1440,Desktop 1440,I03,B-03,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I03.html
+04 Screens / Settings,SCR-I03.1 · פרטי המוסד והגדרות · מחזורי הערכה / Desktop 1440,Desktop 1440,I03,B-03,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I03.html
+04 Screens / Staff,SCR-I04 · צוות בית הספר / Desktop 1440,Desktop 1440,I04,C-03,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'עוד לא נוסף צוות. אפשר לייבא קובץ.',screens/SCR-I04.html
+04 Screens / Staff,SCR-I05 · פרופיל מורה / Desktop 1440,Desktop 1440,I05,B-06,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I05.html
+04 Screens / Staff,SCR-I05.1 · פרופיל מורה · מקצועות וכיתות / Desktop 1440,Desktop 1440,I05,B-06,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I05.html
+04 Screens / Settings,SCR-I06 · מקצועות ושיוכי הוראה / Desktop 1440,Desktop 1440,I06,B-07,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I06.html
+04 Screens / Settings,SCR-I06.1 · מקצועות ושיוכי הוראה · שיוך הוראה / Desktop 1440,Desktop 1440,I06,B-07,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I06.html
+04 Screens / Settings,SCR-I07 · יומן אירועים בית ספרי / Desktop 1440,Desktop 1440,I07,B-04,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I07.html
+04 Screens / Settings,SCR-I08 · חדרים ומשאבים / Desktop 1440,Desktop 1440,I08,B-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I08.html
+04 Screens / Settings,SCR-I09 · שנות לימוד: ארכיון והשוואה / Desktop 1440,Desktop 1440,I09,,נדחה,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I09.html
+04 Screens / Dashboard,SCR-I10 · הודעות הנהלה לצוות / Desktop 1440,Desktop 1440,I10,,נדחה,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-I10.html
+04 Screens / Students,SCR-S01 · רשימת תלמידים / Desktop 1440,Desktop 1440,S01,A-01,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'עוד לא נוספו תלמידים.'; אין תוצאות: 'לא נמצאו תלמידים מתאימים' + איפוס סינון,screens/SCR-S01.html
+04 Screens / Students,SCR-S02 · טופס תלמיד (הוספה ועריכה) / Desktop 1440,Desktop 1440,S02,A-01,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-S02.html
+04 Screens / Students,SCR-S03 · כרטיס תלמיד / Desktop 1440,Desktop 1440,S03,A-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; לשונית ריקה: הסבר + כפתור הוספה מתאים,screens/SCR-S03.html
+04 Screens / Students,SCR-S03.1 · כרטיס תלמיד · נוכחות / Desktop 1440,Desktop 1440,S03,A-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; לשונית ריקה: הסבר + כפתור הוספה מתאים,screens/SCR-S03.html
+04 Screens / Students,SCR-S03.2 · כרטיס תלמיד · ציונים / Desktop 1440,Desktop 1440,S03,A-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; לשונית ריקה: הסבר + כפתור הוספה מתאים,screens/SCR-S03.html
+04 Screens / Students,SCR-S03.3 · כרטיס תלמיד · הערות התנהגות / Desktop 1440,Desktop 1440,S03,A-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; לשונית ריקה: הסבר + כפתור הוספה מתאים,screens/SCR-S03.html
+04 Screens / Students,SCR-S04 · כיתות וקבוצות לימוד / Desktop 1440,Desktop 1440,S04,A-03,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-S04.html
+04 Screens / Students,SCR-S04.1 · כיתות וקבוצות לימוד · קבוצות לימוד / Desktop 1440,Desktop 1440,S04,A-03,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-S04.html
+04 Screens / Students,SCR-S05 · ייבוא תלמידים מקובץ / Desktop 1440,Desktop 1440,S05,A-04,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-S05.html
+04 Screens / Students,SCR-S06 · הערות התנהגות / Desktop 1440,Desktop 1440,S06,A-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-S06.html
+04 Screens / Students,SCR-S07 · העברת תלמיד בין כיתות / Desktop 1440,Desktop 1440,S07,A-04,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-S07.html
+04 Screens / Students,SCR-S08 · כרטיס כיתה מרוכז / Desktop 1440,Desktop 1440,S08,A-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-S08.html
+04 Screens / Students,SCR-S09 · תוצאות חיפוש גלובלי / Desktop 1440,Desktop 1440,S09,A-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; אין תוצאות: 'לא מצאנו כלום עבור [מונח]',screens/SCR-S09.html
+04 Screens / Students,SCR-S09.1 · תוצאות חיפוש גלובלי · תלמידים / Desktop 1440,Desktop 1440,S09,A-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; אין תוצאות: 'לא מצאנו כלום עבור [מונח]',screens/SCR-S09.html
+04 Screens / Students,SCR-S09.2 · תוצאות חיפוש גלובלי · צוות / Desktop 1440,Desktop 1440,S09,A-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; אין תוצאות: 'לא מצאנו כלום עבור [מונח]',screens/SCR-S09.html
+04 Screens / Students,SCR-S09.3 · תוצאות חיפוש גלובלי · כיתות / Desktop 1440,Desktop 1440,S09,A-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; אין תוצאות: 'לא מצאנו כלום עבור [מונח]',screens/SCR-S09.html
+04 Screens / Students,SCR-S10 · פעולות קבוצתיות / Desktop 1440,Desktop 1440,S10,A-03,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-S10.html
+04 Screens / Schedule,SCR-T01 · מערכת שעות שבועית (תצוגות) / Desktop 1440,Desktop 1440,T01,B-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'עוד לא נבנתה מערכת שעות.' + קישור לעריכה (למנהל),screens/SCR-T01.html
+04 Screens / Schedule,SCR-T02 · עריכת מערכת שעות / Desktop 1440,Desktop 1440,T02,B-06,גרסה 1,"ברירת מחדל; טעינה; ריק; שגיאה; קונפליקט: הודעה מיידית ליד התא, לא רק ב-Toast",screens/SCR-T02.html
+04 Screens / Schedule,SCR-T03 · ממלא מקום ומורים זמינים / Desktop 1440,Desktop 1440,T03,B-08,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-T03.html
+04 Screens / Schedule,SCR-T04 · ייבוא וייצוא מערכת שעות / Desktop 1440,Desktop 1440,T04,B-07,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-T04.html
+04 Screens / Schedule,SCR-T05 · עומס הוראה למורה / Desktop 1440,Desktop 1440,T05,,נדחה,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-T05.html
+04 Screens / Schedule,SCR-T06 · היום שלי (מורה) / Desktop 1440,Desktop 1440,T06,B-08,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'אין לך שיעורים היום.',screens/SCR-T06.html
+04 Screens / Attendance,SCR-N01 · סימון נוכחות יומי / Desktop 1440,Desktop 1440,N01,C-04,גרסה 1,"ברירת מחדל; טעינה; ריק; שגיאה; שגיאת שמירה: סרגל מתמיד 'לא נשמר, נסי שוב'",screens/SCR-N01.html
+04 Screens / Attendance,SCR-N02 · היסטוריית נוכחות של תלמיד / Desktop 1440,Desktop 1440,N02,C-04,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-N02.html
+04 Screens / Attendance,SCR-N03 · דוח נוכחות חודשי לכיתה / Desktop 1440,Desktop 1440,N03,C-02,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-N03.html
+04 Screens / Attendance,SCR-N04 · התראות היעדרות ויומן הודעות להורים / Desktop 1440,Desktop 1440,N04,C-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-N04.html
+04 Screens / Attendance,SCR-N04.1 · התראות היעדרות ויומן הודעות להורים · חוקי סף / Desktop 1440,Desktop 1440,N04,C-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-N04.html
+04 Screens / Attendance,SCR-N04.2 · התראות היעדרות ויומן הודעות להורים · יומן הודעות להורים / Desktop 1440,Desktop 1440,N04,C-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-N04.html
+04 Screens / Attendance,SCR-N05 · אישורי איחור ויציאה מוקדמת / Desktop 1440,Desktop 1440,N05,C-06,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'אין בקשות ממתינות.',screens/SCR-N05.html
+04 Screens / Attendance,SCR-N05.1 · אישורי איחור ויציאה מוקדמת · אושרו / Desktop 1440,Desktop 1440,N05,C-06,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'אין בקשות ממתינות.',screens/SCR-N05.html
+04 Screens / Attendance,SCR-N05.2 · אישורי איחור ויציאה מוקדמת · נדחו / Desktop 1440,Desktop 1440,N05,C-06,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'אין בקשות ממתינות.',screens/SCR-N05.html
+04 Screens / Attendance,SCR-N06 · דשבורד נוכחות מוסדי / Desktop 1440,Desktop 1440,N06,C-05,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-N06.html
+04 Screens / Grades,SCR-G01 · הזנת ציונים ומשוב / Desktop 1440,Desktop 1440,G01,A-06,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; שמירה נכשלה: תא מסומן באדום עם 'נסי שוב',screens/SCR-G01.html
+04 Screens / Grades,SCR-G02 · גיליון ציונים של תלמיד / Desktop 1440,Desktop 1440,G02,A-07,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-G02.html
+04 Screens / Grades,SCR-G03 · היסטוריית שינויי ציון / Desktop 1440,Desktop 1440,G03,A-06,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-G03.html
+04 Screens / Grades,SCR-G04 · ניהול מבחנים ומטלות / Desktop 1440,Desktop 1440,G04,A-08,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-G04.html
+04 Screens / Grades,SCR-G05 · סטטיסטיקות והשוואות / Desktop 1440,Desktop 1440,G05,A-07,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-G05.html
+04 Screens / Grades,SCR-G06 · משקלים לציון סופי / Desktop 1440,Desktop 1440,G06,A-09,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-G06.html
+04 Screens / Grades,SCR-G07 · הפקת תעודות / Desktop 1440,Desktop 1440,G07,A-09,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-G07.html
+04 Screens / Grades,SCR-G08 · המקצועות שלי (מורה) / Desktop 1440,Desktop 1440,G08,A-08,גרסה 1,ברירת מחדל; טעינה; ריק; שגיאה; ריק: 'עוד לא שויכת לכיתה. פני להנהלה.',screens/SCR-G08.html
+04 Screens / Grades,SCR-G09 · ארכיון ציונים היסטורי / Desktop 1440,Desktop 1440,G09,,נדחה,ברירת מחדל; טעינה; ריק; שגיאה,screens/SCR-G09.html

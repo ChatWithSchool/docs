@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מסמכי הפרויקט: ניהול פדגוגי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F4F6FB;--surface:#fff;--ink:#0F1530;--muted:#4A5473;--line:#D5DBEA;--primary:#2548E0;--primary-soft:#EEF3FF}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,Arial,sans-serif;line-height:1.6}
+  .wrap{max-width:1040px;margin:0 auto;padding:40px 28px 80px}
+  header h1{font-size:32px;margin:0 0 6px}
+  header p{margin:0;color:var(--muted);max-width:70ch}
+  h2{font-size:20px;margin:40px 0 4px}
+  .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  a.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;color:inherit;text-decoration:none;transition:border-color .12s,box-shadow .12s}
+  a.card:hover,a.card:focus-visible{border-color:var(--primary);box-shadow:0 4px 14px rgba(37,72,224,.12);outline:none}
+  a.card b{display:block;font-size:17px;margin-bottom:2px;color:var(--primary)}
+  a.card span{font-size:14.5px;color:var(--muted)}
+  .files{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .files a{background:var(--primary-soft);color:var(--primary);border-radius:999px;padding:3px 12px;font-size:14px;text-decoration:none}
+  .files a:hover{text-decoration:underline}
+  footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>מסמכי הפרויקט: ניהול פדגוגי</h1>
+    <p>האפיון, העיצוב, תרשימי הזרימה וחלוקת הצוותות במקום אחד. כל הדפים סטטיים, אפשר לפתוח אותם ישר מהתיקייה.</p>
+  </header>
+
+  <h2>אפיון המסכים</h2>
+  <p class="sub">מפרט מלא לכל מסך בגרסה 1: מטרה, היקף v1-lite, אזורים, כללים, API וקריטריוני קבלה.</p>
+  <div class="grid">
+    <a class="card" href="spec/index.html"><b>אינדקס המסכים</b><span>כל המסכים לפי מודול, עם קישור לעמוד של כל מסך</span></a>
+    <a class="card" href="spec/plan.html"><b>תוכנית העבודה</b><span>חמישה ספרינטים, הגדרת "הושלם", סיכונים ומה מוכן לפני ספרינט 1</span></a>
+    <a class="card" href="spec/tasks.html"><b>משימות לפי מפתחת</b><span>שני המסכים של כל מפתחת, לפי צוות ו-Jira</span></a>
+    <a class="card" href="spec/principles.html"><b>עקרונות</b><span>עקרונות המוצר, ה-UX וההנדסה</span></a>
+  </div>
+
+  <h2>עיצוב</h2>
+  <p class="sub">ערכת העיצוב: צבעים, טיפוגרפיה, רכיבים וטוקנים ל-Tailwind.</p>
+  <div class="grid">
+    <a class="card" href="design-kit/design-guide.html"><b>מדריך העיצוב</b><span>הקו העיצובי, הצבעים, הרכיבים והמתכונים</span></a>
+  </div>
+  <div class="files">
+    <a href="design-kit/tokens.json">tokens.json</a>
+    <a href="design-kit/tailwind.config.js">tailwind.config.js</a>
+    <a href="design-kit/theme.css">theme.css</a>
+    <a href="design-kit/figma-components.csv">רכיבים ל-Figma</a>
+    <a href="design-kit/figma-frames.csv">פריימים ל-Figma</a>
+  </div>
+
+  <h2>תרשימי זרימה</h2>
+  <p class="sub">איך המסכים מחוברים, ואיך עובדים התהליכים המרכזיים.</p>
+  <div class="grid">
+    <a class="card" href="flows/screens-flow.html"><b>זרימת כל המסכים</b><span>מפה של כל המסכים לפי מודולים, עם המעברים ביניהם</span></a>
+    <a class="card" href="flows/process-flows.html"><b>תרשימי תהליכים</b><span>הקמת מוסד, הזמנת משתמש, קליטת תלמיד, נוכחות וציונים, עם שגיאות וביטול</span></a>
+  </div>
+  <div class="files">
+    <a href="flows/screens-flow.png">זרימת המסכים כתמונה</a>
+    <a href="flows/screens-flow.mmd">מקור Mermaid</a>
+    <a href="flows/process-flows/process-1.png">תהליך 1</a>
+    <a href="flows/process-flows/process-2.png">תהליך 2</a>
+    <a href="flows/process-flows/process-3.png">תהליך 3</a>
+    <a href="flows/process-flows/process-4.png">תהליך 4</a>
+    <a href="flows/process-flows/process-5.png">תהליך 5</a>
+  </div>
+
+  <h2>צוותות והרשאות</h2>
+  <p class="sub">מי עובד על מה, ומי רשאי לעשות מה במערכת.</p>
+  <div class="grid">
+    <a class="card" href="teams/team-split.html"><b>חלוקה לצוותות</b><span>שלוש מערכות Jira, צמדי המסכים, ותלויות בין צוותות</span></a>
+    <a class="card" href="teams/roles-navigation.html"><b>תפקידים וניווט</b><span>מסך כניסה לכל תפקיד, תפריט, ניתוב אחרי התחברות ומטריצת הרשאות</span></a>
+  </div>
+  <div class="files">
+    <a href="teams/roles-navigation.xlsx">מטריצת ההרשאות באקסל</a>
+    <a href="teams/permissions-matrix.json">permissions-matrix.json</a>
+  </div>
+
+  <footer>הדפים נוצרים מהאפיון. כדי לעדכן אותם, מעדכנים את האפיון ומחליפים את הקבצים בתיקייה המתאימה.</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿Component,Variant properties,States,Where used
+Button,"Variant: primary, secondary, ghost, danger | Size: S 32, M 40, L 48 | Icon: none, leading, trailing, icon-only","default, hover, pressed, focus, disabled, loading",כל המסכים
+IconButton,"Variant: ghost, secondary | Size: S, M","default, hover, pressed, focus, disabled","טבלאות, כותרות"
+TextField,"Size: M | Prefix/Suffix: none, icon, text | Label: on","default, hover, focus, filled, error, disabled, read-only",טפסים
+TextArea,"Rows: 3, 5","default, focus, error, disabled","משוב, הערות"
+Select,"Size: M | Multi: off, on","default, open, focus, error, disabled","סינון, טפסים"
+SearchField,"Size: M | Scope: local, global","default, focus, with-results, no-results","סרגל עליון, S01, S09"
+DatePicker,"Mode: single, range","closed, open, error","נוכחות, אירועים, העברה"
+Checkbox,"Checked: off, on, mixed","default, hover, focus, disabled","טבלאות, טפסים"
+RadioGroup,"Orientation: vertical, horizontal","default, focus, disabled",טפסים
+Switch,"On: off, on","default, focus, disabled",הגדרות
+FileDropzone,State only,"idle, drag-over, uploading, error, done","I02, S05, T04"
+Tabs,Style: underline | Count: 2-6,"default, active, hover, focus, disabled","S03, A06"
+Breadcrumbs,Depth: 2-4,"default, current",כותרות מסך
+Pagination,"Variant: full, compact","default, current, disabled",טבלאות
+Table,"Density: comfortable 48, compact 40 | Selectable: off, on | Sticky header: on","empty, loading, populated",רוב המסכים
+TableRow,"Selected: off, on | Hover: on","default, hover, selected, focus",טבלאות
+Badge,"Tone: neutral, primary, success, warning, danger, info, accent | Size: S, M",default,סטטוסים
+AttendanceChip,"Status: present, absent, late, excused, unreported | Size: S, M",default,"N01-N06, S03"
+AttendanceToggle,"Size: M, L (touch) | Value: present, absent, late, none","default, focus, saving, error",N01
+GradeCell,"State: empty, filled, error, saving, saved","default, focus, hover",G01
+Tag,"Removable: off, on","default, hover, focus","S01, S03"
+Avatar,"Size: S 24, M 32, L 48 | Type: initials, image",default,"טבלאות, כרטיסים"
+Card,"Padding: M 16, L 24 | Interactive: off, on","default, hover, focus",דשבורדים
+MetricCard,"Trend: none, up, down | Tone: neutral, warning","default, loading","X03, S08, N06"
+Alert,"Tone: info, success, warning, danger | Dismissible: off, on",default,"טפסים, מסכים"
+Toast,"Tone: success, danger, info | Action: none, undo","enter, visible, exit",שמירות
+Modal,"Size: S 480, M 640 | Footer: single, double",open,"אישורים, טפסים קצרים"
+Drawer,Side: end | Width: 420,open,"משוב, הערות"
+DropdownMenu,"Item: default, danger, with-icon","closed, open, hover, disabled",פעולות שורה
+Tooltip,"Placement: top, bottom, start, end",visible,אייקונים
+Stepper,Steps: 3-5 | Current: 1-5,"done, current, upcoming","I01, I02, S05, A03"
+EmptyState,"Variant: first-use, no-results, error",default,כל הרשימות
+Skeleton,"Shape: line, block, table-row, card",animated,טעינה
+SidebarItem,"State: default, hover, active, collapsed | Badge: off, on","default, focus",X01
+TopBar,"Variant: desktop, mobile",default,X01
+PageHeader,"Actions: 0-3 | Breadcrumbs: on, off",default,כל המסכים
+LessonBlock,"Tone: subject colors c1-c6 | State: normal, substitute, cancelled, conflict","default, hover, selected","T01, T02, T06"
+Stepper dots / Progress,"Tone: primary, success",default,אשפים

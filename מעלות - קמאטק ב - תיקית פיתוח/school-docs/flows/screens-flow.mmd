@@ -1,0 +1,194 @@
+flowchart RL
+  subgraph M_LOGIN["כניסה והצטרפות"]
+    direction TB
+    A01["התחברות<br/>A01"]:::cLOGIN
+    A02["הצטרפות בהזמנה (הגדרת חשבון)<br/>A02"]:::cLOGIN
+    A03["שכחתי סיסמה ואיפוס<br/>A03"]:::cLOGIN
+  end
+  subgraph M_WIZ["אשף הקמת מוסד"]
+    direction TB
+    W01["אשף: מבנה<br/>W01"]:::cWIZ
+    W02["אשף: ייבוא צוות<br/>W02"]:::cWIZ
+    W03["אשף: ייבוא תלמידים<br/>W03"]:::cWIZ
+    W04["אשף: מקצועות ושיוך<br/>W04"]:::cWIZ
+    W05["אשף: סיום<br/>W05"]:::cWIZ
+  end
+  subgraph M_GEN["כללי"]
+    direction TB
+    X03["דשבורד מנהל<br/>X03"]:::cGEN
+    X01["מסגרת האפליקציה (Shell)<br/>X01"]:::cGEN
+    class X01 sub
+    X02["מצבי מערכת משותפים (טעינה, ריק, שגיאה, 403, 404)<br/>X02"]:::cGEN
+  end
+  subgraph M_STU["תלמידים וכיתות"]
+    direction TB
+    S01["רשימת תלמידים<br/>S01"]:::cSTU
+    S02["טופס תלמיד (הוספה ועריכה)<br/>S02"]:::cSTU
+    S03["כרטיס תלמיד · 4 לשוניות<br/>S03"]:::cSTU
+    S04["כיתות וקבוצות לימוד · 2 לשוניות<br/>S04"]:::cSTU
+    S05["ייבוא תלמידים מקובץ<br/>S05"]:::cSTU
+    S06["הערות התנהגות<br/>S06"]:::cSTU
+    S07["העברת תלמיד בין כיתות<br/>S07"]:::cSTU
+    S08["כרטיס כיתה מרוכז<br/>S08"]:::cSTU
+    S09["תוצאות חיפוש גלובלי · 4 לשוניות<br/>S09"]:::cSTU
+    class S09 sub
+    S10["פעולות קבוצתיות<br/>S10"]:::cSTU
+  end
+  subgraph M_SCH["מערכת שעות"]
+    direction TB
+    T01["מערכת שעות שבועית<br/>T01"]:::cSCH
+    T02["עריכת מערכת שעות<br/>T02"]:::cSCH
+    T03["ממלא מקום ומורים זמינים<br/>T03"]:::cSCH
+    T04["ייבוא וייצוא מערכת שעות<br/>T04"]:::cSCH
+    T06["היום שלי<br/>T06"]:::cSCH
+  end
+  subgraph M_ATT["נוכחות"]
+    direction TB
+    N01["סימון נוכחות יומי<br/>N01"]:::cATT
+    N02["היסטוריית נוכחות של תלמיד<br/>N02"]:::cATT
+    N03["דוח נוכחות חודשי לכיתה<br/>N03"]:::cATT
+    N04["התראות היעדרות ויומן הודעות להורים · 3 לשוניות<br/>N04"]:::cATT
+    N05["אישורי איחור ויציאה מוקדמת · 3 לשוניות<br/>N05"]:::cATT
+    N06["דשבורד נוכחות מוסדי<br/>N06"]:::cATT
+  end
+  subgraph M_GRD["ציונים"]
+    direction TB
+    G01["הזנת ציונים ומשוב<br/>G01"]:::cGRD
+    G02["גיליון ציונים של תלמיד<br/>G02"]:::cGRD
+    G03["היסטוריית שינויי ציון<br/>G03"]:::cGRD
+    G04["ניהול מבחנים ומטלות<br/>G04"]:::cGRD
+    G05["סטטיסטיקות והשוואות<br/>G05"]:::cGRD
+    G06["משקלים לציון סופי<br/>G06"]:::cGRD
+    G07["הפקת תעודות<br/>G07"]:::cGRD
+    G08["המקצועות שלי<br/>G08"]:::cGRD
+  end
+  subgraph M_STF["צוות"]
+    direction TB
+    I04["צוות בית הספר<br/>I04"]:::cSTF
+    I05["פרופיל מורה · 2 לשוניות<br/>I05"]:::cSTF
+    I02["ייבוא צוות הוראה מקובץ<br/>I02"]:::cSTF
+  end
+  subgraph M_SET["הגדרות"]
+    direction TB
+    I03["פרטי המוסד והגדרות · 2 לשוניות<br/>I03"]:::cSET
+    A04["ניהול משתמשים והרשאות<br/>A04"]:::cSET
+    A07["הזמנת משתמשים והזמנות ממתינות · 2 לשוניות<br/>A07"]:::cSET
+    A08["קישור הורה לתלמיד<br/>A08"]:::cSET
+    A09["תפקידים מותאמים ופרטיות · 2 לשוניות<br/>A09"]:::cSET
+    I01["אשף הקמת מוסד: מבנה בית הספר<br/>I01"]:::cSET
+    I06["מקצועות ושיוכי הוראה · 2 לשוניות<br/>I06"]:::cSET
+    I07["יומן אירועים בית ספרי<br/>I07"]:::cSET
+    class I07 sub
+    I08["חדרים ומשאבים<br/>I08"]:::cSET
+    class I08 sub
+  end
+  subgraph M_ACC["החשבון שלי"]
+    direction TB
+    A05["ההרשאות שלי<br/>A05"]:::cACC
+    A06["אבטחת החשבון שלי · 3 לשוניות<br/>A06"]:::cACC
+    class A06 sub
+  end
+  MENU(["תפריט צד: כניסה לכל מודול"]):::menu
+  MENU -.-> X03
+  MENU -.-> S01
+  MENU -.-> S04
+  MENU -.-> T01
+  MENU -.-> N01
+  MENU -.-> G01
+  MENU -.-> I04
+  MENU -.-> I03
+  AVATAR(["אווטאר ופרופיל"]):::menu
+  AVATAR -.-> A05
+  A01 --> A02
+  A01 --> A03
+  A01 --> S01
+  A01 --> S03
+  A01 --> T06
+  A01 --> W01
+  A01 --> X03
+  A02 --> A01
+  A03 --> A01
+  A04 --> A07
+  A04 --> A09
+  A07 --> A04
+  A07 --> A08
+  A08 --> S03
+  G01 --> G02
+  G01 --> G03
+  G01 --> G05
+  G02 --> G07
+  G04 --> G01
+  G06 --> G07
+  G07 --> G02
+  G08 --> G01
+  G08 --> G04
+  G08 --> G05
+  I01 --> I02
+  I01 --> X03
+  I02 --> I04
+  I02 --> S05
+  I03 --> I01
+  I03 --> I04
+  I04 --> I02
+  I04 --> I05
+  I05 --> I06
+  N01 --> N05
+  N01 --> X03
+  N04 --> S03
+  N06 --> N03
+  S01 --> S02
+  S01 --> S03
+  S01 --> S05
+  S02 --> S01
+  S03 --> G02
+  S03 --> N02
+  S03 --> S02
+  S03 --> S06
+  S03 --> S07
+  S04 --> S08
+  S05 --> S01
+  S07 --> S03
+  S08 --> G01
+  S08 --> N01
+  S08 --> S03
+  S08 --> T01
+  S10 --> S01
+  T01 --> T02
+  T02 --> T01
+  T03 --> T01
+  T04 --> T01
+  W01 --> A01
+  W01 --> W02
+  W01 --> X03
+  W02 --> W01
+  W02 --> W03
+  W02 --> X03
+  W03 --> W02
+  W03 --> W04
+  W03 --> X03
+  W04 --> W03
+  W04 --> W05
+  W04 --> X03
+  W05 --> W04
+  W05 --> X03
+  X02 --> A05
+  X02 --> S02
+  X02 --> X03
+  X03 --> A07
+  X03 --> N01
+  X03 --> N04
+  X03 --> N05
+  linkStyle 11,12,13,14,15,22,33,34,36,38,41,43,44,50,51,58,59,61,67,69,72,75,78,80,81,82,84,85,86,87 stroke:#E8590C,stroke-width:2px
+  linkStyle 0,1,2,3,4,5,6,7,8 stroke:#8892B0,stroke-width:1.5px,stroke-dasharray:5 4
+  classDef cLOGIN fill:#EFE9F8,stroke:#6D4AA8,color:#0F1530,stroke-width:1.5px
+  classDef cWIZ fill:#E1F2EE,stroke:#1F7A6B,color:#0F1530,stroke-width:1.5px
+  classDef cGEN fill:#E8EAF0,stroke:#5B6676,color:#0F1530,stroke-width:1.5px
+  classDef cSTU fill:#FBEBDD,stroke:#A8561F,color:#0F1530,stroke-width:1.5px
+  classDef cSCH fill:#E2ECF9,stroke:#2A62B4,color:#0F1530,stroke-width:1.5px
+  classDef cATT fill:#F8E3EA,stroke:#A8325A,color:#0F1530,stroke-width:1.5px
+  classDef cGRD fill:#EBF3D8,stroke:#5F7F18,color:#0F1530,stroke-width:1.5px
+  classDef cSTF fill:#DDF3F7,stroke:#1B7F95,color:#0F1530,stroke-width:1.5px
+  classDef cSET fill:#FFF0D9,stroke:#B26A00,color:#0F1530,stroke-width:1.5px
+  classDef cACC fill:#EDEFF5,stroke:#4A5473,color:#0F1530,stroke-width:1.5px
+  classDef menu fill:#0F1530,stroke:#0F1530,color:#FFFFFF
+  classDef sub stroke-dasharray:6 4
