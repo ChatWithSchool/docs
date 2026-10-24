@@ -5,11 +5,11 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
-  "sm": 640,
-  "md": 768,
-  "lg": 1024,
-  "xl": 1280,
-  "2xl": 1536
+  "sm": "640px",
+  "md": "768px",
+  "lg": "1024px",
+  "xl": "1280px",
+  "2xl": "1536px"
 },
     colors: {
   "transparent": "transparent",
@@ -198,9 +198,27 @@ module.exports = {
   "8": "32px",
   "10": "40px",
   "12": "48px",
-  "16": "64px"
+  "16": "64px",
+  "4.5": "18px"
 },
       ringColor: { DEFAULT: '#3A62FA' },
+      // Component sizes that have no spacing step: the check box and radio (18), the tab underline,
+      // the drawer, the dialogs, the toast and the grade cell.
+      borderWidth: { 3: '3px' },
+      width: { drawer: '420px', toast: '360px', 'grade-cell': '72px' },
+      maxWidth: { 'modal-s': '480px', 'modal-m': '640px' },
+      // The toast enters and leaves (the States enter, visible, exit of the Figma component).
+      keyframes: {
+        'toast-in': {
+          from: { opacity: '0', transform: 'translateY(8px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'toast-out': { from: { opacity: '1' }, to: { opacity: '0' } },
+      },
+      animation: {
+        'toast-in': 'toast-in 150ms ease-out',
+        'toast-out': 'toast-out 100ms ease-in',
+      },
     },
   },
   plugins: [],
