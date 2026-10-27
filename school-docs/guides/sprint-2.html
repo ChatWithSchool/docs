@@ -1,0 +1,282 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ספרינט 2: סכמות ו-seed</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--ink:#16202E;--ink2:#4A5568;--paper:#F6F7F9;--card:#FFFFFF;--line:#D8DDE6;--wire:#8A94A6;--wirebg:#F1F3F7;--accent:#0E5A7E;--accent-soft:#E3F0F6;--warn:#A64B0B;}
+*{box-sizing:border-box}
+html{scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Heebo','Assistant','Segoe UI',Arial,sans-serif;font-size:16px;line-height:1.7}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid #F0A500;outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:24px 20px 72px}
+.topnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;margin-bottom:20px}
+.topnav a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+h1{font-size:34px;line-height:1.25;margin:6px 0 10px;font-weight:700}
+h2{font-size:21px;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--ink)}
+h3{font-size:17px;margin:20px 0 6px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:500;background:var(--accent-soft);color:var(--accent);border:1px solid #BCD9E6}
+.chip.id{font-family:ui-monospace,Menlo,Consolas,monospace;direction:ltr;font-weight:600;background:#fff}
+.meta{display:grid;grid-template-columns:140px 1fr;gap:6px 16px;background:var(--card);border:1px solid var(--line);padding:16px 20px;margin:18px 0}
+.meta dt{font-weight:600;color:var(--ink2)} .meta dd{margin:0}
+ul.plain{margin:0;padding:0 20px 0 0} ul.plain li{margin:4px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:15px}
+th,td{padding:8px 12px;text-align:right;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:#EDF0F5;font-weight:600}
+td.nowrap{white-space:nowrap}
+.check li{list-style:none;position:relative;margin:6px 0;padding-right:28px}
+.check li:before{content:'';position:absolute;right:0;top:6px;width:16px;height:16px;border:2px solid var(--ink);border-radius:3px;background:#fff}
+.foot{display:flex;justify-content:space-between;margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:15px}
+.rel{font-size:13px;padding:1px 8px;border:1px solid var(--line);border-radius:4px;background:#fff;white-space:nowrap}
+.rel.B{border-color:var(--accent);color:var(--accent);font-weight:600}
+/* wireframe */
+.wf{border:1.5px solid var(--wire);border-radius:10px;background:#fff;max-width:780px;margin:12px auto 0;overflow:hidden}
+.wf-chrome{display:flex;gap:6px;align-items:center;padding:8px 12px;background:var(--wirebg);border-bottom:1.5px solid var(--wire);font-size:12px;color:var(--ink2)}
+.wf-chrome i{width:9px;height:9px;border-radius:50%;background:var(--wire);display:inline-block}
+.wf-chrome span{margin-right:auto;direction:ltr}
+.wf-body{padding:14px;display:flex;flex-direction:column;gap:12px}
+.wf-side{display:flex;gap:12px}
+.wf-side>.sb{width:150px;flex:none;border:1.5px dashed var(--wire);border-radius:8px;padding:10px;background:var(--wirebg)}
+.wf-side>.sb div{padding:5px 8px;font-size:13px;border-radius:5px;margin-bottom:3px}
+.wf-side>.sb div:first-child{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.wf-side>.mn{flex:1;display:flex;flex-direction:column;gap:12px;min-width:0}
+.r{border:1.5px dashed var(--wire);border-radius:8px;padding:10px 12px;position:relative;background:#fff}
+.rt{font-size:11px;color:var(--ink2);margin-bottom:8px;font-weight:500}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.bar b{font-size:16px}
+.btn{display:inline-block;border:1.5px solid var(--wire);border-radius:6px;padding:3px 12px;font-size:13px;background:#fff}
+.btn.p{background:var(--ink);color:#fff;border-color:var(--ink)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.inp{display:inline-block;min-width:130px;border:1.5px solid var(--wire);border-radius:6px;padding:4px 10px;font-size:13px;color:var(--ink2);background:#fff}
+.tbl{display:grid;gap:0;font-size:12.5px}
+.tbl .h{background:#EDF0F5;font-weight:600;padding:6px 8px;border-bottom:1.5px solid var(--wire)}
+.tbl .c{padding:9px 8px;border-bottom:1px solid var(--line)}
+.tbl .c i{display:block;height:8px;border-radius:4px;background:#DDE2EA;width:70%}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+.form label{display:block;font-size:12.5px;margin-bottom:3px;color:var(--ink2)}
+.form .f{border:1.5px solid var(--wire);border-radius:6px;height:28px;background:#fff}
+.req{color:var(--warn);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.cards div{border:1.5px solid var(--wire);border-radius:8px;padding:12px;font-size:13px;background:var(--wirebg);min-height:64px}
+.cards div:before{content:'';display:block;width:42%;height:9px;border-radius:5px;background:#CBD2DD;margin-bottom:8px}
+.gridw{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.gridw div{height:26px;border:1px solid var(--line);background:#fff}
+.gridw div.hd{background:#EDF0F5}.gridw div.on{background:var(--accent-soft);border-color:#9DC5D8}
+.capt{font-size:12.5px;color:var(--ink2);margin-top:8px}
+.chart{display:flex;align-items:flex-end;gap:7px;height:84px;border-bottom:1.5px solid var(--wire);padding:0 6px}
+.chart i{flex:1;background:#CBD2DD;border-radius:3px 3px 0 0}
+.tabs .tr{display:flex;gap:4px;border-bottom:1.5px solid var(--wire);margin-bottom:10px;flex-wrap:wrap}
+.tabs .tr span{padding:5px 12px;font-size:13px;border:1.5px solid var(--wire);border-bottom:none;border-radius:6px 6px 0 0;background:var(--wirebg);color:var(--ink2)}
+.tabs .tr span:first-child{background:#fff;font-weight:600;color:var(--ink)}
+.ln{height:8px;border-radius:4px;background:#DDE2EA;margin:8px 0}
+.lst div{display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px}
+.lst div:before{content:'';width:12px;height:12px;border:1.5px solid var(--wire);border-radius:3px;flex:none}
+.note{background:var(--wirebg);font-size:13px}
+.note div{margin:2px 0}
+.steps{display:flex;gap:6px;align-items:flex-start;justify-content:space-between}
+.steps div{flex:1;text-align:center;font-size:12.5px;position:relative}
+.steps div b{display:flex;width:26px;height:26px;border-radius:50%;margin:0 auto 4px;align-items:center;justify-content:center;border:1.5px solid var(--wire);background:#fff;font-size:12px}
+.steps div:first-child b{background:var(--ink);color:#fff;border-color:var(--ink)}
+.up{border:2px dashed var(--wire);border-radius:8px;text-align:center;padding:18px;font-size:13px;background:var(--wirebg)}
+.doc{background:#fff;border:1.5px solid var(--wire);padding:14px;font-size:13px;max-width:360px;margin:0 auto}
+.doc div{margin:6px 0}
+/* index */
+.hero{padding:8px 0 4px}
+.lead{font-size:18px;max-width:62ch;color:var(--ink2)}
+.flow{background:var(--card);border:1px solid var(--line);padding:14px 18px;margin:12px 0}
+.flow h3{margin:0 0 2px}
+.flow p{margin:0 0 10px;color:var(--ink2);font-size:15px}
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chain a{text-decoration:none;border:1.5px solid var(--ink);padding:3px 10px;border-radius:6px;font-size:14px;background:#fff;color:var(--ink)}
+.chain a:hover{background:var(--ink);color:#fff}
+.chain span.ar{color:var(--wire)}
+.epic-h{display:flex;align-items:center;gap:10px;margin-top:36px}
+.sw{width:14px;height:14px;border-radius:3px;display:inline-block}
+@media (max-width:640px){.form{grid-template-columns:1fr}.wf-side{flex-direction:column}.wf-side>.sb{width:auto}.meta{grid-template-columns:1fr}h1{font-size:27px}}
+table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
+@media print{body{background:#fff}.topnav,.foot{display:none}}
+
+.banner{border:1.5px solid var(--warn);background:#FFF4E8;padding:10px 16px;margin:14px 0;font-weight:500}
+.banner.infra{border-color:var(--accent);background:var(--accent-soft)}
+.cx{font-size:12px;padding:1px 8px;border-radius:4px;font-weight:600;border:1px solid var(--line);background:#fff}
+.cx.H{color:#9A1B1B;border-color:#E3A3A3}.cx.M{color:#7A5200;border-color:#E6C77D}.cx.L{color:#14633F;border-color:#9AD3B8}
+.dev{background:var(--card);border:1px solid var(--line);margin:16px 0;padding:16px 20px}
+.dev h3{margin:0 0 6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.good{background:#EAF7F0;border:1px solid #B5DEC8;padding:10px 14px}
+.later{background:#F4F6FB;border:1px solid var(--line);padding:10px 14px;color:var(--ink2)}
+.tl td:first-child{white-space:nowrap;font-weight:600}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:0 9px;font-size:12.5px;background:#fff;margin:1px 2px}
+@media (max-width:640px){.two{grid-template-columns:1fr}}
+</style><style>code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:#EDF0F5;padding:0 5px;border-radius:4px;unicode-bidi:isolate}pre{background:#16202E;color:#F1F3F7;padding:14px 18px;border-radius:8px;overflow-x:auto;font-size:14px;line-height:1.6;text-align:left;direction:ltr}pre code{background:none;padding:0;color:inherit}.track{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}.track div{background:var(--card);border:1.5px solid var(--accent);border-radius:10px;padding:12px 16px}.track div.b{border-color:#C8641A}.toc{background:var(--card);border:1px solid var(--line);padding:12px 18px;margin:16px 0}@media (max-width:640px){.track{grid-template-columns:1fr}}</style>
+</head><body><div class="wrap"><nav class="topnav"><a href="../index.html">מסמכי הפרויקט</a><a href="../spec/index.html">אינדקס המסכים</a></nav>
+<h1>ספרינט 2: סכמות ו-seed, וסרבר א'</h1>
+<p class="lead">איך מתחילות לעבוד בשרת: איך יודעות אילו אוספים לבנות ואילו שדות יש בהם, איפה בונות אותם, ואיזה כללים שומרים.</p>
+
+<div class="track">
+<div><b>מסלול א':</b> השבוע רק חלק א' (סכמות ו-seed). מי שלא סיימה את הקליינט מסיימת אותו קודם. סרבר א' בשבוע הבא.</div>
+<div class="b"><b>מסלול ב':</b> חלק א' עד יום ראשון, ב-PR קטן. מיום שני חלק ב' (סרבר א').</div>
+</div>
+<p class="capt">המורה מודיעה בכיתה באיזה מסלול השבוע. בשני המסלולים מתחילים מחלק א'.</p>
+
+<div class="toc"><b>בעמוד הזה:</b> <a href="#before">לפני שמתחילות</a> · <a href="#what">מה בונים</a> · <a href="#fields">מאיפה השדות</a> · <a href="#where">איפה בונים</a> · <a href="#model">המודל</a> · <a href="#seed">ה-seed</a> · <a href="#rules">הכללים</a> · <a href="#done">הושלם</a> · <a href="#servera">סרבר א'</a> · <a href="#mistakes">טעויות נפוצות</a></div>
+
+<h2 id="before">לפני שמתחילות (פעם אחת)</h2>
+<ol class="plain">
+<li><b>MongoDB רץ על המחשב.</b> מתקינות MongoDB Community Server גרסה 7.0 ל-Windows (<a href="https://www.mongodb.com/try/download/community">הורדה</a>), עם ברירות המחדל ועם הסימון "Install MongoD as a Service". חלופות: Docker (<code>docker compose up -d</code>), או MongoDB Atlas בענן.</li>
+<li><b>השרת רץ:</b> בתיקייה <code>school-server</code> מריצות <code>npm install</code>, <code>cp .env.example .env</code>, <code>npm run seed</code> ו-<code>npm run dev</code>.</li>
+<li><b>רואות את הנתונים:</b> מתקינות ב-VS Code את התוסף <b>MongoDB for VS Code</b>, לוחצות על העלה הירוק, ואז Add Connection ומדביקות <code>mongodb://localhost:27017</code>. בחלונית CONNECTIONS פותחות <code>school</code> ואוסף.</li>
+<li><b>קוראות את מודול ההדרכה</b> <code>src/modules/announcements</code> בשרת. הוא מראה את כל הדפוס: מודל, seed, routes ובדיקות.</li>
+</ol>
+<p class="capt">הרצת seed ולא רואה נתונים? ייתכן שאצלך רצים שני שרתי MongoDB (גם התקנה ב-Windows וגם Docker), ואת מסתכלת על השרת השני. בחרי אחד מהם ועצרי את האחר.</p>
+
+<h2>מה זה סכמה ומה זה seed</h2>
+<div class="tw"><table><thead><tr><th>מושג</th><th>מה זה</th></tr></thead><tbody>
+<tr><td class="nowrap"><b>סכמה (מודל)</b></td><td>החוקים של אוסף: אילו שדות, מאיזה סוג, מה חובה ומה ייחודי. נכתבת בקוד, ב-<code>model.ts</code>, ו-Mongoose בודק לפיה כל רשומה לפני שהוא שומר אותה.</td></tr>
+<tr><td class="nowrap"><b>seed</b></td><td>קוד שממלא את המסד בנתוני דוגמה קבועים, כדי שהמסך יציג נתונים כבר בהרצה הראשונה, וכל הצוות יראה את אותם נתונים.</td></tr>
+<tr><td class="nowrap"><b>אוסף ליבה</b></td><td>institutions, academic_years, users, roles, staff_profiles, classes, students, subjects. מוכנים מראש ב-<code>src/models</code>.</td></tr>
+<tr><td class="nowrap"><b>אוסף משותף</b></td><td>אוסף שכמה מסכים קוראים ממנו: rooms, events, teaching_assignments, lessons, invites, assessments, grades, grade_feedback, attendance_records ו-attendance_alerts. גם הם כבר מוכנים ב-<code>src/models</code>, ולכן אף אחת לא מחכה לאחרת.</td></tr>
+</tbody></table></div>
+
+<h2 id="what">שלב 1: מה את בונה</h2>
+<p>פותחות את <b>עמוד המסך</b> באפיון (<a href="../spec/index.html">אינדקס המסכים</a>) ויורדות לסעיף <b>"שרת ונתונים"</b>. שם כתוב בדיוק מה בונים בכל שלב:</p>
+<div class="tw"><table><thead><tr><th>מה כתוב שם</th><th>מה עושות</th></tr></thead><tbody>
+<tr><td><b>"בונות: המודל ..."</b>, עם טבלת שדות</td><td>אוסף פרטי של המסך שלך. בונות לו מודל ו-seed במודול שלך</td></tr>
+<tr><td><b>"אוספים שמייבאים (לא בונים)"</b></td><td>אוספי ליבה ומשותפים. לא בונות אותם, רק מייבאות מ-<code>src/models</code>. שורת ה-import כבר כתובה בעמוד</td></tr>
+<tr><td><b>"המסך הזה כותב אליו בסרבר ב'"</b></td><td>אוסף משותף שהמסך שלך אחראי על ה-endpoints שכותבים אליו. המודל קיים, ואת הכתיבה בונים בספרינט 3</td></tr>
+</tbody></table></div>
+<p><b>אין במסך שלך אוסף "בונות"?</b> זה המצב אצל עשר מפתחות, וזה בסדר. בשלב הזה בודקות שהמודלים בליבה מספיקים למסך, ושיש ב-seed נתונים לכל מצב שלו (רשימה מלאה, ריקה, ערך חסר). חסר שדה או נתון? <b>לא משנות את הליבה:</b> כותבות לראשת הצוות ב-Slack.</p>
+
+<h2 id="fields">מאיפה באים השדות</h2>
+<p>בעמוד המסך יש <b>טיוטת שדות</b> לכל אוסף שבונות. היא נגזרה מהאפיון של המסך, וככה גוזרים שדות בכל פרויקט:</p>
+<div class="tw"><table><thead><tr><th>מה כתוב ב-SPEC</th><th>מה זה אומר על המודל</th></tr></thead><tbody>
+<tr><td>שדה בטופס עם <code>*</code> ("תיאור *")</td><td>שדה <b>חובה</b> (<code>required: true</code>)</td></tr>
+<tr><td>שדה בטופס בלי כוכבית</td><td>שדה רשות. אם הוא יכול להיות ריק: <code>default: null</code></td></tr>
+<tr><td>עמודה בטבלה ("נכתב ע"י")</td><td>שדה שהשרת מחזיר. לפעמים זה מזהה (<code>authorId</code>), והשם מגיע מהאוסף שאליו הוא מפנה</td></tr>
+<tr><td>רשימת אפשרויות ("סוג: חיובי, משמעת, אחר")</td><td><code>enum</code> עם ערכים באנגלית: <code>['positive', 'discipline', 'other']</code></td></tr>
+<tr><td>כלל: "אסור ש..." / "רק אחד..."</td><td>אינדקס <b>ייחודי</b>, או בדיקה בשרת</td></tr>
+<tr><td>כלל: "מחיקה רכה"</td><td>שדה <code>deletedAt</code> במקום מחיקה אמיתית</td></tr>
+</tbody></table></div>
+<p>הטיוטה היא נקודת התחלה. קוראות את האפיון של המסך, מתקנות מה שצריך, <b>ומגדירות את סכמת התגובה בחוזה</b> (<code>openapi.yaml</code>) באישור ראשת הצוות. בעמוד המסך מסומן <span class="cx M">טרם הוגדרה</span> ליד כל תגובה שעוד לא הוגדרה.</p>
+
+<h2 id="where">שלב 2: איפה בונים</h2>
+<pre><code>git switch dev &amp;&amp; git pull
+git switch -c feature/PEDB-12-I08-schema     # project key, Jira task number, screen, stage
+npm run new:module -- foo --screen I08       # the module name from the screen page</code></pre>
+<p>שם המודול המוצע כתוב בעמוד המסך. הפקודה יוצרת את <code>src/modules/foos/</code> עם <code>model.ts</code>, <code>schema.ts</code>, <code>routes.ts</code>, <code>seed.ts</code> ובדיקה. בחלק א' עובדות רק על <b>model.ts</b> ועל <b>seed.ts</b>.</p>
+<ul class="plain">
+<li>אין למסך אוסף פרטי? מוחקות את <code>model.ts</code> שנוצר ומייבאות מ-<code>../../models</code>. אחרת השרת לא יעלה, כי אותו מודל ייוצר פעמיים.</li>
+<li>שני המסכים שלך משתמשים באותו אוסף פרטי? בונים להם מודול אחד. זה כתוב בעמוד המסך.</li>
+</ul>
+
+<h2 id="model">שלב 3: המודל (model.ts)</h2>
+<pre><code>import { Schema, model, type InferSchemaType } from 'mongoose';
+import { DATE_ONLY } from '../../utils/dateOnly';
+
+const fooSchema = new Schema(
+  {
+    institutionId: { type: Schema.Types.ObjectId, ref: 'Institution', required: true, index: true }, // 1
+    barId: { type: Schema.Types.ObjectId, ref: 'Student', required: true },                         // 2
+    name: { type: String, required: true, trim: true },
+    status: { type: String, enum: ['open', 'closed'], default: 'open' },                             // 3
+    day: { type: String, required: true, match: DATE_ONLY },                                         // 4
+    note: { type: String, trim: true, default: null },                                               // 5
+  },
+  { timestamps: true, collection: 'foos' },                                                          // 6
+);
+fooSchema.index({ institutionId: 1, name: 1 }, { unique: true });                                    // 7
+
+export type FooDoc = InferSchemaType&lt;typeof fooSchema&gt;;
+export const Foo = model('Foo', fooSchema);</code></pre>
+<ol class="plain">
+<li><b>1.</b> כל אוסף שייך למוסד, עם אינדקס.</li>
+<li><b>2.</b> הפניה לאוסף אחר: <code>ObjectId</code> עם <code>ref</code> לשם המודל (<code>'Student'</code>, <code>'SchoolClass'</code>), לא לשם האוסף.</li>
+<li><b>3.</b> רשימה סגורה של ערכים: <code>enum</code>, בדיוק כמו בחוזה.</li>
+<li><b>4.</b> תאריך בלי שעה: מחרוזת <code>'YYYY-MM-DD'</code>.</li>
+<li><b>5.</b> שדה שיכול להיות ריק: <code>default: null</code>.</li>
+<li><b>6.</b> <code>createdAt</code> ו-<code>updatedAt</code> נוספים לבד.</li>
+<li><b>7.</b> מה שאסור שיחזור פעמיים: אינדקס ייחודי.</li>
+</ol>
+<p class="capt">דוגמאות אמיתיות בשרת: <code>src/models/room.model.ts</code> (פשוטה), ו-<code>src/models/attendanceRecord.model.ts</code> (תאריך, null ואינדקס ייחודי על כמה שדות).</p>
+
+<h2 id="seed">שלב 4: ה-seed (seed.ts)</h2>
+<pre><code>import { Institution, Student } from '../../models';
+import { Foo } from './model';
+
+/** Demo data for the screen. Idempotent: running it twice changes nothing. */
+export async function seed(): Promise&lt;void&gt; {
+  const inst = await Institution.findOne({ name: 'בית ספר לדוגמה' });
+  if (!inst) return;
+  const students = await Student.find({ institutionId: inst._id }).sort({ nationalId: 1 }).limit(2);
+  const items = [
+    { name: 'foo', status: 'open', day: '2026-10-20' },
+    { name: 'bar', status: 'closed', day: '2026-10-21' },
+  ];
+  for (let i = 0; i &lt; items.length; i++) {
+    await Foo.updateOne(
+      { institutionId: inst._id, name: items[i].name }, // the natural key
+      { $set: { ...items[i], institutionId: inst._id, barId: students[i]._id } },
+      { upsert: true },
+    );
+  }
+}</code></pre>
+<p>ה-seed של המודול רץ לבד ב-<code>npm run seed</code>, אחרי ה-seed של הליבה ושל האוספים המשותפים, ולכן מותר לו לקרוא מכל מה שב-<code>src/models</code>.</p>
+
+<h2 id="rules">הכללים, ולמה</h2>
+<h3>במודל</h3>
+<div class="tw"><table><thead><tr><th>כלל</th><th>למה</th></tr></thead><tbody>
+<tr><td><code>institutionId</code> חובה ועם אינדקס בכל אוסף</td><td>כל שאילתה מסוננת לפי מוסד, כדי שמוסד אחד לא יראה נתונים של מוסד אחר</td></tr>
+<tr><td>שדות ו-<code>enum</code> בדיוק כמו בחוזה</td><td>הקליינט נבנה על Mock לפי החוזה. כל הבדל יישבר בחיבור בספרינט 4</td></tr>
+<tr><td>תאריך בלי שעה: <code>'YYYY-MM-DD'</code> (<code>DATE_ONLY</code>)</td><td>ל-<code>Date</code> יש גם שעה ואזור זמן: חצות בישראל הוא עדיין היום הקודם ב-UTC</td></tr>
+<tr><td>שדה ריק: <code>default: null</code></td><td>הקליינט בודק <code>=== null</code>, ושדה שחסר לגמרי (<code>undefined</code>) לא יעבור את הבדיקה</td></tr>
+<tr><td>אינדקס <code>unique</code> על מה שאסור שיחזור</td><td>המסד חוסם כפילויות גם כשיש באג בקוד</td></tr>
+<tr><td>מידע רגיש: <code>select: false</code></td><td>טוקן או סיסמה לא חוזרים מהשרת. ראו <code>src/models/invite.model.ts</code></td></tr>
+</tbody></table></div>
+<h3>ב-seed</h3>
+<div class="tw"><table><thead><tr><th>כלל</th><th>למה</th></tr></thead><tbody>
+<tr><td><code>updateOne</code> עם <code>upsert: true</code> לפי מפתח טבעי, ולא <code>create</code></td><td>אפשר להריץ שוב ושוב בלי כפילויות</td></tr>
+<tr><td>בלי <code>Math.random()</code></td><td>כל הצוות רואה אותם נתונים, והבדיקות יציבות</td></tr>
+<tr><td>נתונים לכל מצב: ריק, מלא, ערך חסר, סטטוסים שונים</td><td>כך בודקים את כל המצבים של המסך</td></tr>
+<tr><td>רק מוסד הדוגמה, ורק האוספים שלך</td><td>לא נוגעים בנתונים של אחרות</td></tr>
+</tbody></table></div>
+<h3>בקוד</h3>
+<div class="tw"><table><thead><tr><th>כלל</th><th>למה</th></tr></thead><tbody>
+<tr><td>מייבאות רק מהליבה ומהמודול שלך, ולא <code>from '../other-module/...'</code></td><td>כך אין תלות במפתחת אחרת. ESLint חוסם את זה, ו-PR כזה לא ימוזג</td></tr>
+<tr><td>לא משנות קבצים משותפים (<code>src/models</code>, <code>src/seed</code>, <code>permissions</code>, <code>middleware</code>, <code>openapi</code>) בלי אישור ראשת הצוות</td><td>כולן נשענות עליהם</td></tr>
+<tr><td>שינוי ב-<code>openapi.yaml</code> רק בפגישת ראשי הצוותות</td><td>הקליינט והשרת חייבים לדבר באותה שפה</td></tr>
+</tbody></table></div>
+
+<h2 id="done">מתי חלק א' גמור</h2>
+<ul class="check">
+<li>המודל עובר <code>npm run typecheck</code>, והשדות תואמים לחוזה</li>
+<li><code>npm run seed</code> רץ פעמיים, והמספרים לא משתנים</li>
+<li>יש ב-seed נתונים לכל מצב של המסך, ורואים אותם בתוסף ל-VS Code</li>
+<li>אין ייבוא ממודול אחר, ואין שינוי בליבה</li>
+<li><code>npm run verify</code> ירוק, ו-PR קטן ל-<code>dev</code> עם ריוויו של חברה</li>
+</ul>
+
+<h2 id="servera">חלק ב': סרבר א' (endpoints לקריאה)</h2>
+<p class="banner infra">מתחילות רק אחרי שה-PR של חלק א' מוזג: במסלול ב' מיום שני, ובמסלול א' בשבוע הבא.</p>
+<ol class="plain">
+<li><b>1. מוצאות את ה-GET שלך:</b> בעמוד המסך, בטבלה "ה-endpoints בחוזה", בשורות שהשלב שלהן הוא "סרבר א'".</li>
+<li><b>2. כותבות את ה-route ב-routes.ts</b> (התבנית כבר שם): <code>authorize('&lt;מסך&gt;', 'read')</code> בראש כל route, סינון לפי <code>institutionId: req.user!.institutionId</code>, ועימוד עם <code>parsePagination</code> ו-<code>toPage</code> כשהתגובה בחוזה היא <code>...Page</code>.</li>
+<li><b>3. ממפות לצורה שבחוזה:</b> <code>id: String(doc._id)</code>, ובלי שדות פנימיים כמו <code>institutionId</code> או <code>__v</code>.</li>
+<li><b>4. בודקות:</b> לפחות בדיקה אחת לכל endpoint (בלי טוקן מקבלים 401, ועם טוקן מקבלים את מבנה החוזה), ובדיקה ידנית עם <code>curl</code>.</li>
+</ol>
+<p>"מוגבלת לשלו" בטבלת ההרשאות בעמוד המסך: מסננים לפי הכיתות, המקצועות או הילדים של המשתמש, עם <code>services/scope.ts</code>. את הכתיבה (POST, PUT ו-DELETE) ואת הולידציה בונים בסרבר ב', בספרינט 3.</p>
+<ul class="check">
+<li>ה-endpoints זהים לחוזה: נתיב, פרמטרים ומבנה התגובה</li>
+<li>עימוד, מיון וסינון לפי החוזה</li>
+<li>בדיקת הרשאה וסינון לפי מוסד</li>
+<li>בדיקה לכל endpoint, ו-<code>npm run verify</code> ירוק</li>
+</ul>
+
+<h2 id="mistakes">טעויות נפוצות</h2>
+<div class="tw"><table><thead><tr><th>הטעות</th><th>התיקון</th></tr></thead><tbody>
+<tr><td>בונות מחדש אוסף שכבר קיים בליבה</td><td>בודקות בעמוד המסך מה מייבאים, ומוחקות את <code>model.ts</code> שנוצר</td></tr>
+<tr><td><code>create()</code> ב-seed, ואחרי הרצה שנייה יש כפילויות</td><td><code>updateOne</code> עם <code>upsert: true</code> לפי מפתח טבעי</td></tr>
+<tr><td><code>new Date()</code> לתאריך של יום</td><td>מחרוזת <code>'YYYY-MM-DD'</code>, ולהיום: <code>toDateOnly(new Date())</code></td></tr>
+<tr><td>שדה ריק נשאר <code>undefined</code></td><td><code>default: null</code> במודל</td></tr>
+<tr><td>מחזירות את המסמך של Mongoose כמו שהוא (<code>_id</code>, <code>__v</code>, <code>institutionId</code>)</td><td>ממפות לצורה שבחוזה</td></tr>
+<tr><td>מחכות למפתחת אחרת</td><td>אין למה לחכות: כל מה שמשותף כבר מוכן. נתקעת? 20 דקות לבד, ואז שאלה ב-Slack</td></tr>
+</tbody></table></div>
+<div class="foot"><span><a href="../index.html">› מסמכי הפרויקט</a></span><span><a href="../spec/index.html">אינדקס המסכים ‹</a></span></div>
+</div></body></html>
