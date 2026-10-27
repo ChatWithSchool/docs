@@ -1,0 +1,193 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>סרבר א'</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--ink:#16202E;--ink2:#4A5568;--paper:#F6F7F9;--card:#FFFFFF;--line:#D8DDE6;--wire:#8A94A6;--wirebg:#F1F3F7;--accent:#0E5A7E;--accent-soft:#E3F0F6;--warn:#A64B0B;}
+*{box-sizing:border-box}
+html{scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Heebo','Assistant','Segoe UI',Arial,sans-serif;font-size:16px;line-height:1.7}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid #F0A500;outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:24px 20px 72px}
+.topnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;margin-bottom:20px}
+.topnav a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+h1{font-size:34px;line-height:1.25;margin:6px 0 10px;font-weight:700}
+h2{font-size:21px;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--ink)}
+h3{font-size:17px;margin:20px 0 6px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:500;background:var(--accent-soft);color:var(--accent);border:1px solid #BCD9E6}
+.chip.id{font-family:ui-monospace,Menlo,Consolas,monospace;direction:ltr;font-weight:600;background:#fff}
+.meta{display:grid;grid-template-columns:140px 1fr;gap:6px 16px;background:var(--card);border:1px solid var(--line);padding:16px 20px;margin:18px 0}
+.meta dt{font-weight:600;color:var(--ink2)} .meta dd{margin:0}
+ul.plain{margin:0;padding:0 20px 0 0} ul.plain li{margin:4px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:15px}
+th,td{padding:8px 12px;text-align:right;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:#EDF0F5;font-weight:600}
+td.nowrap{white-space:nowrap}
+.check li{list-style:none;position:relative;margin:6px 0;padding-right:28px}
+.check li:before{content:'';position:absolute;right:0;top:6px;width:16px;height:16px;border:2px solid var(--ink);border-radius:3px;background:#fff}
+.foot{display:flex;justify-content:space-between;margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:15px}
+.rel{font-size:13px;padding:1px 8px;border:1px solid var(--line);border-radius:4px;background:#fff;white-space:nowrap}
+.rel.B{border-color:var(--accent);color:var(--accent);font-weight:600}
+/* wireframe */
+.wf{border:1.5px solid var(--wire);border-radius:10px;background:#fff;max-width:780px;margin:12px auto 0;overflow:hidden}
+.wf-chrome{display:flex;gap:6px;align-items:center;padding:8px 12px;background:var(--wirebg);border-bottom:1.5px solid var(--wire);font-size:12px;color:var(--ink2)}
+.wf-chrome i{width:9px;height:9px;border-radius:50%;background:var(--wire);display:inline-block}
+.wf-chrome span{margin-right:auto;direction:ltr}
+.wf-body{padding:14px;display:flex;flex-direction:column;gap:12px}
+.wf-side{display:flex;gap:12px}
+.wf-side>.sb{width:150px;flex:none;border:1.5px dashed var(--wire);border-radius:8px;padding:10px;background:var(--wirebg)}
+.wf-side>.sb div{padding:5px 8px;font-size:13px;border-radius:5px;margin-bottom:3px}
+.wf-side>.sb div:first-child{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.wf-side>.mn{flex:1;display:flex;flex-direction:column;gap:12px;min-width:0}
+.r{border:1.5px dashed var(--wire);border-radius:8px;padding:10px 12px;position:relative;background:#fff}
+.rt{font-size:11px;color:var(--ink2);margin-bottom:8px;font-weight:500}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.bar b{font-size:16px}
+.btn{display:inline-block;border:1.5px solid var(--wire);border-radius:6px;padding:3px 12px;font-size:13px;background:#fff}
+.btn.p{background:var(--ink);color:#fff;border-color:var(--ink)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.inp{display:inline-block;min-width:130px;border:1.5px solid var(--wire);border-radius:6px;padding:4px 10px;font-size:13px;color:var(--ink2);background:#fff}
+.tbl{display:grid;gap:0;font-size:12.5px}
+.tbl .h{background:#EDF0F5;font-weight:600;padding:6px 8px;border-bottom:1.5px solid var(--wire)}
+.tbl .c{padding:9px 8px;border-bottom:1px solid var(--line)}
+.tbl .c i{display:block;height:8px;border-radius:4px;background:#DDE2EA;width:70%}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+.form label{display:block;font-size:12.5px;margin-bottom:3px;color:var(--ink2)}
+.form .f{border:1.5px solid var(--wire);border-radius:6px;height:28px;background:#fff}
+.req{color:var(--warn);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.cards div{border:1.5px solid var(--wire);border-radius:8px;padding:12px;font-size:13px;background:var(--wirebg);min-height:64px}
+.cards div:before{content:'';display:block;width:42%;height:9px;border-radius:5px;background:#CBD2DD;margin-bottom:8px}
+.gridw{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.gridw div{height:26px;border:1px solid var(--line);background:#fff}
+.gridw div.hd{background:#EDF0F5}.gridw div.on{background:var(--accent-soft);border-color:#9DC5D8}
+.capt{font-size:12.5px;color:var(--ink2);margin-top:8px}
+.chart{display:flex;align-items:flex-end;gap:7px;height:84px;border-bottom:1.5px solid var(--wire);padding:0 6px}
+.chart i{flex:1;background:#CBD2DD;border-radius:3px 3px 0 0}
+.tabs .tr{display:flex;gap:4px;border-bottom:1.5px solid var(--wire);margin-bottom:10px;flex-wrap:wrap}
+.tabs .tr span{padding:5px 12px;font-size:13px;border:1.5px solid var(--wire);border-bottom:none;border-radius:6px 6px 0 0;background:var(--wirebg);color:var(--ink2)}
+.tabs .tr span:first-child{background:#fff;font-weight:600;color:var(--ink)}
+.ln{height:8px;border-radius:4px;background:#DDE2EA;margin:8px 0}
+.lst div{display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px}
+.lst div:before{content:'';width:12px;height:12px;border:1.5px solid var(--wire);border-radius:3px;flex:none}
+.note{background:var(--wirebg);font-size:13px}
+.note div{margin:2px 0}
+.steps{display:flex;gap:6px;align-items:flex-start;justify-content:space-between}
+.steps div{flex:1;text-align:center;font-size:12.5px;position:relative}
+.steps div b{display:flex;width:26px;height:26px;border-radius:50%;margin:0 auto 4px;align-items:center;justify-content:center;border:1.5px solid var(--wire);background:#fff;font-size:12px}
+.steps div:first-child b{background:var(--ink);color:#fff;border-color:var(--ink)}
+.up{border:2px dashed var(--wire);border-radius:8px;text-align:center;padding:18px;font-size:13px;background:var(--wirebg)}
+.doc{background:#fff;border:1.5px solid var(--wire);padding:14px;font-size:13px;max-width:360px;margin:0 auto}
+.doc div{margin:6px 0}
+/* index */
+.hero{padding:8px 0 4px}
+.lead{font-size:18px;max-width:62ch;color:var(--ink2)}
+.flow{background:var(--card);border:1px solid var(--line);padding:14px 18px;margin:12px 0}
+.flow h3{margin:0 0 2px}
+.flow p{margin:0 0 10px;color:var(--ink2);font-size:15px}
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chain a{text-decoration:none;border:1.5px solid var(--ink);padding:3px 10px;border-radius:6px;font-size:14px;background:#fff;color:var(--ink)}
+.chain a:hover{background:var(--ink);color:#fff}
+.chain span.ar{color:var(--wire)}
+.epic-h{display:flex;align-items:center;gap:10px;margin-top:36px}
+.sw{width:14px;height:14px;border-radius:3px;display:inline-block}
+@media (max-width:640px){.form{grid-template-columns:1fr}.wf-side{flex-direction:column}.wf-side>.sb{width:auto}.meta{grid-template-columns:1fr}h1{font-size:27px}}
+table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
+@media print{body{background:#fff}.topnav,.foot{display:none}}
+
+.banner{border:1.5px solid var(--warn);background:#FFF4E8;padding:10px 16px;margin:14px 0;font-weight:500}
+.banner.infra{border-color:var(--accent);background:var(--accent-soft)}
+.cx{font-size:12px;padding:1px 8px;border-radius:4px;font-weight:600;border:1px solid var(--line);background:#fff}
+.cx.H{color:#9A1B1B;border-color:#E3A3A3}.cx.M{color:#7A5200;border-color:#E6C77D}.cx.L{color:#14633F;border-color:#9AD3B8}
+.dev{background:var(--card);border:1px solid var(--line);margin:16px 0;padding:16px 20px}
+.dev h3{margin:0 0 6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.good{background:#EAF7F0;border:1px solid #B5DEC8;padding:10px 14px}
+.later{background:#F4F6FB;border:1px solid var(--line);padding:10px 14px;color:var(--ink2)}
+.tl td:first-child{white-space:nowrap;font-weight:600}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:0 9px;font-size:12.5px;background:#fff;margin:1px 2px}
+@media (max-width:640px){.two{grid-template-columns:1fr}}
+</style><style>code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:#EDF0F5;padding:0 5px;border-radius:4px;unicode-bidi:isolate}pre{background:#16202E;color:#F1F3F7;padding:14px 18px;border-radius:8px;overflow-x:auto;font-size:14px;line-height:1.6;text-align:left;direction:ltr}pre code{background:none;padding:0;color:inherit}.track{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}.track div{background:var(--card);border:1.5px solid var(--accent);border-radius:10px;padding:12px 16px}.track div.b{border-color:#C8641A}.toc{background:var(--card);border:1px solid var(--line);padding:12px 18px;margin:16px 0}@media (max-width:640px){.track{grid-template-columns:1fr}}</style>
+</head><body><div class="wrap"><nav class="topnav"><a href="../index.html">מסמכי הפרויקט</a><a href="../spec/index.html">אינדקס המסכים</a></nav>
+<h1>סרבר א': endpoints לקריאה</h1>
+<p class="lead">השלב השני בשרת: ה-GET של המסך, לפי החוזה, עם בדיקת הרשאה, סינון ובדיקות.</p>
+<div class="toc"><b>בעמוד הזה:</b> <a href="#before">לפני שמתחילות</a> · <a href="#find">מה בונים</a> · <a href="#route">ה-route</a> · <a href="#permissions">הרשאות</a> · <a href="#test">בדיקה</a> · <a href="#done">מתי זה גמור</a> · <a href="#mistakes">טעויות נפוצות</a></div>
+
+<h2 id="before">לפני שמתחילות</h2>
+<ul class="plain">
+<li>ה-PR של <a href="schemas-seed.html">הסכמות וה-seed</a> של המסך מוזג ל-<code>dev</code>, ו-<code>npm run seed</code> ממלא את הנתונים.</li>
+<li>השרת רץ על המחשב (<a href="schemas-seed.html#before">ההתקנה</a>).</li>
+<li id="swagger"><b>פותחות את החוזה כ-Swagger:</b> מתקינות ב-VS Code את התוסף <b>OpenAPI (Swagger) Editor</b>, ופותחות את <code>school-server/openapi/openapi.yaml</code>. לוחצות בתוך הקובץ ואז <code>Shift+Alt+P</code> (או <code>Ctrl+Shift+P</code> ובוחרות <code>OpenAPI: show preview</code>). נפתח לצד הקובץ עמוד עם כל ה-endpoints, ולמטה, תחת Schemas, כל הסכמות. בפעם הראשונה בוחרות Swagger UI. הסרגל השמאלי של התוסף (סמל OpenAPI) מציג עץ של Paths ו-Schemas.</li>
+<li>קראת את <code>routes.ts</code> במודול ההדרכה <code>school-server/src/modules/announcements/</code>. זו התבנית ש-<code>new:module</code> יוצר.</li>
+</ul>
+
+<h2 id="find">שלב 1: מה את בונה</h2>
+<p>בעמוד המסך באפיון, בסעיף <b>"שרת ונתונים"</b>, בטבלה <b>"ה-endpoints בחוזה"</b>: בונות את השורות שהשלב שלהן הוא "סרבר א'" (כל ה-GET). בטבלה כתוב לכל endpoint הנתיב, הפרמטרים, וסכמת התגובה בחוזה.</p>
+<p>כל התגובות כבר מוגדרות בחוזה, ולכן <b>לא משנים את <code>openapi.yaml</code></b>. חסר שדה או פרמטר? כותבות לראשת הצוות. endpoint שמסומן <span class="cx L">נדחה מגרסה 1</span> לא בונים.</p>
+<p class="capt">לחוזה יש מקור אחד: <code>school-server/openapi/openapi.yaml</code>. העותק בקליינט מתעדכן עם <code>npm run contract:sync</code> בריפו של הקליינט, ולא עורכים אותו ביד.</p>
+
+<h2 id="route">שלב 2: ה-route ב-routes.ts</h2>
+<pre><code>// GET /api/foos?page=1&amp;size=25
+router.get(
+  '/foos',
+  authorize('S06', 'read'),                                  // 1
+  asyncHandler(async (req, res) =&gt; {
+    const { page, size, skip } = parsePagination(req.query); // 2
+    const filter = { institutionId: req.user!.institutionId }; // 3
+    const [items, total] = await Promise.all([
+      Foo.find(filter).sort({ createdAt: -1 }).skip(skip).limit(size).lean(),
+      Foo.countDocuments(filter),
+    ]);
+    const mapped = items.map((f) =&gt; ({                     // 4
+      id: String(f._id),
+      name: f.name,
+      status: f.status,
+    }));
+    res.json(toPage(mapped, total, page, size));
+  }),
+);</code></pre>
+<ol class="plain">
+<li><b>1.</b> בדיקת הרשאה, עם מזהה המסך. השורה המוכנה כתובה בעמוד המסך.</li>
+<li><b>2.</b> עימוד, כשהתגובה בחוזה היא <code>...Page</code>. כשהיא <code>...List</code> מחזירות <code>{ items }</code> בלי עימוד.</li>
+<li><b>3.</b> כל שאילתה מסוננת לפי המוסד של המשתמש.</li>
+<li><b>4.</b> ממפות כל רשומה לצורה שבחוזה: <code>id</code> כמחרוזת, אותם שמות שדות, ובלי שדות פנימיים כמו <code>institutionId</code> או <code>__v</code>. שדה ריק נשלח כ-<code>null</code>.</li>
+</ol>
+<p class="capt">אם האוסף בליבה: מייבאות אותו מ-<code>../../models</code>. שורת ה-import המוכנה כתובה בעמוד המסך.</p>
+
+<h2 id="permissions">שלב 3: הרשאות</h2>
+<p>בסרבר א' צריך לדעת שני דברים בלבד. את שאר ההרשאות (כתיבה, צפייה בלבד, מי מורשה לערוך) לומדים בסרבר ב'.</p>
+<h3>1. השורה <code>authorize</code></h3>
+<p><code>authorize('&lt;מסך&gt;', 'read')</code> בודקת את מטריצת ההרשאות לבד: משתמש בלי טוקן מקבל 401, ומשתמש בלי גישה למסך מקבל 403. לא צריך לכתוב את הבדיקה בעצמך.</p>
+<h3>2. "מוגבלת לשלו" (scoped)</h3>
+<p>בטבלת ההרשאות בעמוד המסך מופיעה לכל תפקיד רמת הגישה שלו. כשכתוב <b>"מוגבלת לשלו"</b>, ה-GET חייב לסנן: מורה רואה רק את הכיתות שלה, והורה רואה רק את הילדים שלו. בלי הסינון הזה, מורה תראה את התלמידים של כל בית הספר.</p>
+<pre><code>import { getScopedClassIds } from '../../services/scope';
+
+if (req.accessLevel === 'scoped') {
+  filter.classId = { $in: await getScopedClassIds(req.user!.id) };
+}</code></pre>
+<p class="capt">להורה: הילדים שלו הם התלמידים שבשדה <code>guardians</code> שלהם יש <code>userId</code> שלו (<code>Student.guardians[].userId</code>).</p>
+
+<h2 id="test">שלב 4: בדיקה ידנית</h2>
+<ul class="plain">
+<li><b>בדיקה ידנית:</b> <code>npm run dev</code>, ואז <code>curl</code> עם טוקן. הפקודות המוכנות בקובץ <code>school-server/docs/new-module.md</code>, בסעיף "איך בודקים endpoint ידנית".</li>
+<li><b>ואז:</b> <code>npm run verify</code> ו-PR קטן ל-<code>dev</code>.</li>
+</ul>
+
+<h2 id="done">מתי זה גמור</h2>
+<ul class="check">
+<li>ה-endpoints זהים לחוזה: נתיב, פרמטרים ומבנה התגובה</li>
+<li>עימוד, מיון וסינון לפי החוזה</li>
+<li><code>authorize</code> בכל route, סינון לפי מוסד, וסינון "מוגבלת לשלו" כשהוא נדרש</li>
+<li>בדקת כל endpoint ידנית עם <code>curl</code>, ו-<code>npm run verify</code> ירוק</li>
+</ul>
+<p class="capt">את הכתיבה (POST, PUT ו-DELETE), הולידציה ב-<code>schema.ts</code> וההרשאות המלאות בונים בסרבר ב'.</p>
+
+<h2 id="mistakes">טעויות נפוצות</h2>
+<div class="tw"><table><thead><tr><th>הטעות</th><th>התיקון</th></tr></thead><tbody>
+<tr><td>מחזירות את המסמך של Mongoose כמו שהוא (<code>_id</code>, <code>__v</code>, <code>institutionId</code>)</td><td>ממפות לצורה שבחוזה</td></tr>
+<tr><td>שוכחות לסנן לפי <code>institutionId</code></td><td>מתחילות כל שאילתה מ-<code>{ institutionId: req.user!.institutionId }</code></td></tr>
+<tr><td>מורה רואה את כל התלמידים</td><td>סינון "מוגבלת לשלו" כש-<code>req.accessLevel === 'scoped'</code></td></tr>
+<tr><td>מחזירות את כל הרשומות בבת אחת</td><td>עימוד עם <code>parsePagination</code> ו-<code>toPage</code></td></tr>
+<tr><td>שדה ריק לא מופיע בתגובה</td><td>שולחות אותו כ-<code>null</code></td></tr>
+</tbody></table></div>
+<div class="foot"><span><a href="schemas-seed.html">› השלב הקודם: סכמות ו-seed</a></span><span><a href="../index.html">מסמכי הפרויקט ‹</a></span></div>
+</div></body></html>
