@@ -139,7 +139,7 @@ table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
 <pre dir="ltr">import { AttendanceRecord, Student, SchoolClass } from '../../models';</pre>
 <h3>ה-endpoints בחוזה</h3>
 <div class="tw"><table><thead><tr><th>שיטה</th><th>נתיב</th><th>קלט</th><th>תגובה</th><th>שלב</th><th>מי</th></tr></thead><tbody><tr><td class="nowrap"><code dir="ltr">GET</code></td><td><code dir="ltr">/classes/{id}/attendance/monthly</code></td><td>-</td><td><span class="cx M">טרם הוגדרה</span></td><td class="nowrap">סרבר א'</td><td class="nowrap">C-02</td></tr><tr><td class="nowrap"><code dir="ltr">GET</code></td><td><code dir="ltr">/classes/{id}/attendance/monthly/export</code></td><td>query: format</td><td><span class="cx M">טרם הוגדרה</span></td><td class="nowrap">סרבר א'</td><td class="nowrap">C-02</td></tr></tbody></table></div>
-<p class="capt">לראות את החוזה המלא כ-Swagger: <a href="../../guides/schemas-seed.html#swagger">איך פותחים</a>.</p>
+<p class="capt">לראות את החוזה המלא כ-Swagger: <a href="../../guides/server-a.html#swagger">איך פותחים</a>.</p>
 <p class="capt">"טרם הוגדרה": זה endpoint שמרכז נתונים, ובחוזה כתוב עדיין רק <code dir="ltr">type: object</code>. בעלת המסך כותבת את מבנה התגובה ב-<code dir="ltr">openapi.yaml</code> באותו PR של ה-route, וראשת הצוות רואה אותו בקוד ריוויו. אין שלב אישור נפרד.</p>
 <h3>הרשאות (מטריצת ההרשאות)</h3>
 <div class="tw"><table><thead><tr><th>תפקיד</th><th>גישה</th></tr></thead><tbody><tr><td>הנהלה</td><td>מלאה</td></tr><tr><td>רכז/ת</td><td>אין גישה</td></tr><tr><td>מזכירות</td><td>צפייה בלבד</td></tr><tr><td>מחנך/ת</td><td>מוגבלת לשלו</td></tr><tr><td>מורה מקצועי</td><td>אין גישה</td></tr><tr><td>הורה</td><td>אין גישה</td></tr><tr><td>תלמיד</td><td>אין גישה</td></tr></tbody></table></div>

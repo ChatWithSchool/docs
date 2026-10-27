@@ -115,7 +115,8 @@ table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
 <h2 id="before">לפני שמתחילות</h2>
 <ul class="plain">
 <li>ה-PR של <a href="schemas-seed.html">הסכמות וה-seed</a> של המסך מוזג ל-<code>dev</code>, ו-<code>npm run seed</code> ממלא את הנתונים.</li>
-<li>השרת רץ על המחשב (<a href="schemas-seed.html#before">ההתקנה</a>), ואת פותחת את החוזה כ-Swagger (<a href="schemas-seed.html#swagger">איך פותחים</a>).</li>
+<li>השרת רץ על המחשב (<a href="schemas-seed.html#before">ההתקנה</a>).</li>
+<li id="swagger"><b>פותחות את החוזה כ-Swagger:</b> מתקינות ב-VS Code את התוסף <b>OpenAPI (Swagger) Editor</b>, ופותחות את <code>school-server/openapi/openapi.yaml</code>. לוחצות בתוך הקובץ ואז <code>Shift+Alt+P</code> (או <code>Ctrl+Shift+P</code> ובוחרות <code>OpenAPI: show preview</code>). נפתח לצד הקובץ עמוד עם כל ה-endpoints, ולמטה, תחת Schemas, כל הסכמות. בפעם הראשונה בוחרות Swagger UI. הסרגל השמאלי של התוסף (סמל OpenAPI) מציג עץ של Paths ו-Schemas.</li>
 <li>קראת את <code>routes.ts</code> במודול ההדרכה <code>school-server/src/modules/announcements/</code>. זו התבנית ש-<code>new:module</code> יוצר.</li>
 </ul>
 
@@ -164,9 +165,8 @@ if (req.accessLevel === 'scoped') {
 }</code></pre>
 <p class="capt">להורה: הילדים שלו הם התלמידים שבשדה <code>guardians</code> שלהם יש <code>userId</code> שלו (<code>Student.guardians[].userId</code>).</p>
 
-<h2 id="test">שלב 4: בדיקה</h2>
+<h2 id="test">שלב 4: בדיקה ידנית</h2>
 <ul class="plain">
-<li><b>בדיקה אוטומטית לכל endpoint:</b> בלי טוקן מקבלים 401, ועם טוקן התגובה במבנה של החוזה. התבנית ב-<code>routes.test.ts</code> שנוצר.</li>
 <li><b>בדיקה ידנית:</b> <code>npm run dev</code>, ואז <code>curl</code> עם טוקן. הפקודות המוכנות בקובץ <code>school-server/docs/new-module.md</code>, בסעיף "איך בודקים endpoint ידנית".</li>
 <li><b>ואז:</b> <code>npm run verify</code> ו-PR קטן ל-<code>dev</code>.</li>
 </ul>
@@ -176,7 +176,7 @@ if (req.accessLevel === 'scoped') {
 <li>ה-endpoints זהים לחוזה: נתיב, פרמטרים ומבנה התגובה</li>
 <li>עימוד, מיון וסינון לפי החוזה</li>
 <li><code>authorize</code> בכל route, סינון לפי מוסד, וסינון "מוגבלת לשלו" כשהוא נדרש</li>
-<li>בדיקה לכל endpoint, ו-<code>npm run verify</code> ירוק</li>
+<li>בדקת כל endpoint ידנית עם <code>curl</code>, ו-<code>npm run verify</code> ירוק</li>
 </ul>
 <p class="capt">את הכתיבה (POST, PUT ו-DELETE), הולידציה ב-<code>schema.ts</code> וההרשאות המלאות בונים בסרבר ב'.</p>
 

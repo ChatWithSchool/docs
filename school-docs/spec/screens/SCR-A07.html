@@ -139,7 +139,7 @@ table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
 <pre dir="ltr">import { Invite, User, Role } from '../../models';</pre>
 <h3>ה-endpoints בחוזה</h3>
 <div class="tw"><table><thead><tr><th>שיטה</th><th>נתיב</th><th>קלט</th><th>תגובה</th><th>שלב</th><th>מי</th></tr></thead><tbody><tr><td class="nowrap"><code dir="ltr">GET</code></td><td><code dir="ltr">/invites</code></td><td>query: status</td><td><code dir="ltr">InvitePage</code></td><td class="nowrap">סרבר א'</td><td class="nowrap">B-01</td></tr><tr><td class="nowrap"><code dir="ltr">POST</code></td><td><code dir="ltr">/invites</code></td><td>גוף בקשה</td><td><code dir="ltr">{ id }</code></td><td class="nowrap">סרבר ב'</td><td class="nowrap">B-01</td></tr><tr><td class="nowrap"><code dir="ltr">DELETE</code></td><td><code dir="ltr">/invites/{id}</code></td><td>-</td><td><code dir="ltr">בלי גוף (204)</code></td><td class="nowrap">סרבר ב'</td><td class="nowrap">B-01</td></tr></tbody></table></div>
-<p class="capt">לראות את החוזה המלא כ-Swagger: <a href="../../guides/schemas-seed.html#swagger">איך פותחים</a>.</p>
+<p class="capt">לראות את החוזה המלא כ-Swagger: <a href="../../guides/server-a.html#swagger">איך פותחים</a>.</p>
 <h3>הרשאות (מטריצת ההרשאות)</h3>
 <div class="tw"><table><thead><tr><th>תפקיד</th><th>גישה</th></tr></thead><tbody><tr><td>הנהלה</td><td>מלאה</td></tr><tr><td>רכז/ת</td><td>אין גישה</td></tr><tr><td>מזכירות</td><td>אין גישה</td></tr><tr><td>מחנך/ת</td><td>אין גישה</td></tr><tr><td>מורה מקצועי</td><td>אין גישה</td></tr><tr><td>הורה</td><td>אין גישה</td></tr><tr><td>תלמיד</td><td>אין גישה</td></tr></tbody></table></div>
 <p class="capt">"מוגבלת לשלו" (scoped): מסננים לפי הכיתות, המקצועות או הילדים של המשתמש, עם <code dir="ltr">services/scope.ts</code>.</p>

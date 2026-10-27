@@ -116,7 +116,6 @@ table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
 <li><b>MongoDB רץ על המחשב.</b> מתקינות MongoDB Community Server גרסה 7.0 ל-Windows (<a href="https://www.mongodb.com/try/download/community">הורדה</a>), עם ברירות המחדל ועם הסימון "Install MongoD as a Service". חלופות: Docker (<code>docker compose up -d</code>), או MongoDB Atlas בענן.</li>
 <li><b>השרת רץ:</b> בתיקייה <code>school-server</code> מריצות <code>npm install</code>, <code>cp .env.example .env</code>, <code>npm run seed</code> ו-<code>npm run dev</code>.</li>
 <li><b>רואות את הנתונים:</b> מתקינות ב-VS Code את התוסף <b>MongoDB for VS Code</b>, לוחצות על העלה הירוק, ואז Add Connection ומדביקות <code>mongodb://localhost:27017</code>. בחלונית CONNECTIONS פותחות <code>school</code> ואוסף.</li>
-<li id="swagger"><b>פותחות את החוזה כ-Swagger:</b> מתקינות ב-VS Code את התוסף <b>OpenAPI (Swagger) Editor</b>, ופותחות את <code>school-server/openapi/openapi.yaml</code>. לוחצות בתוך הקובץ ואז <code>Shift+Alt+P</code> (או <code>Ctrl+Shift+P</code> ובוחרות <code>OpenAPI: show preview</code>). נפתח לצד הקובץ עמוד עם כל ה-endpoints, ולמטה, תחת Schemas, כל הסכמות. בפעם הראשונה בוחרות Swagger UI. הסרגל השמאלי של התוסף (סמל OpenAPI) מציג עץ של Paths ו-Schemas.</li>
 <li id="reference"><b>עוברות על מודול ההדרכה</b> <code>school-server/src/modules/announcements/</code>. זו דוגמה מלאה שעובדת (הודעות הנהלה לצוות, מסך שלא נבנה בגרסה 1), וכל מודול שתבני ייראה כמוה. פותחות ב-VS Code את ארבעת הקבצים, לפי הסדר:<div class="tw"><table><thead><tr><th>קובץ</th><th>מה מחפשות בו</th><th>מתי צריך את זה</th></tr></thead><tbody><tr><td><code>model.ts</code></td><td>השדות, הסוגים, מה חובה, <code>institutionId</code> והאינדקס בסוף הקובץ</td><td>סכמות ו-seed</td></tr><tr><td><code>seed.ts</code></td><td>איך מוצאים את מוסד הדוגמה, ואיך <code>updateOne</code> עם <code>upsert: true</code> מונע כפילויות</td><td>סכמות ו-seed</td></tr><tr><td><code>routes.ts</code></td><td>ה-GET: <code>authorize</code> בראש, סינון לפי <code>institutionId</code>, עימוד, ומיפוי לצורה של החוזה</td><td>סרבר א'</td></tr><tr><td><code>schema.ts</code> ו-<code>*.test.ts</code></td><td>ולידציה ובדיקות</td><td>סרבר ב' (ספרינט 3)</td></tr></tbody></table></div>ורואות אותו רץ: אחרי <code>npm run seed</code> פותחות בתוסף <code>school</code> ואז <code>announcements</code> (שתי הודעות). אחרי <code>npm run dev</code> מריצות את פקודות ה-<code>curl</code> שבקובץ <code>school-server/docs/new-module.md</code> ("איך בודקים endpoint ידנית"), ורואות את מה ש-<code>routes.ts</code> מחזיר.</li>
 </ol>
 <p class="capt">הרצת seed ולא רואה נתונים? ייתכן שאצלך רצים שני שרתי MongoDB (גם התקנה ב-Windows וגם Docker), ואת מסתכלת על השרת השני. בחרי אחד מהם ועצרי את האחר.</p>
@@ -148,7 +147,7 @@ table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
 <tr><td>כלל: "אסור ש..." / "רק אחד..."</td><td>אינדקס <b>ייחודי</b>, או בדיקה בשרת</td></tr>
 <tr><td>כלל: "מחיקה רכה"</td><td>שדה <code>deletedAt</code> במקום מחיקה אמיתית</td></tr>
 </tbody></table></div>
-<p>גם התגובה של ה-API כבר מוגדרת בחוזה, בסכמה עם שם המודל. חסר שדה? כותבות לראשת הצוות. ב-endpoints שמרכזים נתונים (דשבורד, דוח, חיפוש) מסומן <span class="cx M">טרם הוגדרה</span>: שם בעלת המסך כותבת את מבנה התגובה ב-<code>openapi.yaml</code> באותו PR של ה-route, וראשת הצוות רואה אותו בקוד ריוויו.</p>
+<p>השדות בטבלה כבר תואמים לחוזה, ולכן לא צריך לפתוח אותו בשלב הזה. חסר שדה? כותבות לראשת הצוות.</p>
 
 <h2 id="where">שלב 2: איפה בונים</h2>
 <pre><code>git switch dev &amp;&amp; git pull
@@ -182,7 +181,7 @@ export const Foo = model('Foo', fooSchema);</code></pre>
 <ol class="plain">
 <li><b>1.</b> כל אוסף שייך למוסד, עם אינדקס.</li>
 <li><b>2.</b> הפניה לאוסף אחר: <code>ObjectId</code> עם <code>ref</code> לשם המודל (<code>'Student'</code>, <code>'SchoolClass'</code>), לא לשם האוסף.</li>
-<li><b>3.</b> רשימה סגורה של ערכים: <code>enum</code>, בדיוק כמו בחוזה.</li>
+<li><b>3.</b> רשימה סגורה של ערכים: <code>enum</code>, עם אותם ערכים שבטבלת השדות.</li>
 <li><b>4.</b> תאריך בלי שעה: מחרוזת <code>'YYYY-MM-DD'</code>.</li>
 <li><b>5.</b> שדה שיכול להיות ריק: <code>default: null</code>.</li>
 <li><b>6.</b> <code>createdAt</code> ו-<code>updatedAt</code> נוספים לבד.</li>
@@ -217,7 +216,7 @@ export async function seed(): Promise&lt;void&gt; {
 <h3>במודל</h3>
 <div class="tw"><table><thead><tr><th>כלל</th><th>למה</th></tr></thead><tbody>
 <tr><td><code>institutionId</code> חובה ועם אינדקס בכל אוסף</td><td>כל שאילתה מסוננת לפי מוסד, כדי שמוסד אחד לא יראה נתונים של מוסד אחר</td></tr>
-<tr><td>שדות ו-<code>enum</code> בדיוק כמו בחוזה</td><td>הקליינט נבנה על Mock לפי החוזה. כל הבדל יישבר בחיבור בספרינט 4</td></tr>
+<tr><td>שדות ו-<code>enum</code> בדיוק כמו בטבלה בעמוד המסך</td><td>הקליינט נבנה על Mock לפי החוזה. כל הבדל יישבר בחיבור בספרינט 4</td></tr>
 <tr><td>תאריך בלי שעה: <code>'YYYY-MM-DD'</code> (<code>DATE_ONLY</code>)</td><td>ל-<code>Date</code> יש גם שעה ואזור זמן: חצות בישראל הוא עדיין היום הקודם ב-UTC</td></tr>
 <tr><td>שדה ריק: <code>default: null</code></td><td>הקליינט בודק <code>=== null</code>, ושדה שחסר לגמרי (<code>undefined</code>) לא יעבור את הבדיקה</td></tr>
 <tr><td>אינדקס <code>unique</code> על מה שאסור שיחזור</td><td>המסד חוסם כפילויות גם כשיש באג בקוד</td></tr>
@@ -239,7 +238,7 @@ export async function seed(): Promise&lt;void&gt; {
 
 <h2 id="done">מתי זה גמור</h2>
 <ul class="check">
-<li>המודל עובר <code>npm run typecheck</code>, והשדות תואמים לחוזה</li>
+<li>המודל עובר <code>npm run typecheck</code>, והשדות תואמים לטבלה בעמוד המסך</li>
 <li><code>npm run seed</code> רץ פעמיים, והמספרים לא משתנים</li>
 <li>יש ב-seed נתונים לכל מצב של המסך, ורואים אותם בתוסף ל-VS Code</li>
 <li>אין ייבוא ממודול אחר, ואין שינוי בליבה</li>
