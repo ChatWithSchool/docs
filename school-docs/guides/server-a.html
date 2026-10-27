@@ -122,7 +122,8 @@ table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
 
 <h2 id="find">שלב 1: מה את בונה</h2>
 <p>בעמוד המסך באפיון, בסעיף <b>"שרת ונתונים"</b>, בטבלה <b>"ה-endpoints בחוזה"</b>: בונות את השורות שהשלב שלהן הוא "סרבר א'" (כל ה-GET). בטבלה כתוב לכל endpoint הנתיב, הפרמטרים, וסכמת התגובה בחוזה.</p>
-<p>ב-endpoint שמסומן <span class="cx M">טרם הוגדרה</span> (endpoint שמרכז נתונים, כמו דשבורד או סיכום): כותבות את מבנה התגובה ב-<code>openapi.yaml</code>, בשני העותקים (שרת וקליינט), באותו PR של ה-route. ראשת הצוות רואה אותו בקוד ריוויו.</p>
+<p>כל התגובות כבר מוגדרות בחוזה, ולכן <b>לא משנים את <code>openapi.yaml</code></b>. חסר שדה או פרמטר? כותבות לראשת הצוות. endpoint שמסומן <span class="cx L">נדחה מגרסה 1</span> לא בונים.</p>
+<p class="capt">לחוזה יש מקור אחד: <code>school-server/openapi/openapi.yaml</code>. העותק בקליינט מתעדכן עם <code>npm run contract:sync</code> בריפו של הקליינט, ולא עורכים אותו ביד.</p>
 
 <h2 id="route">שלב 2: ה-route ב-routes.ts</h2>
 <pre><code>// GET /api/foos?page=1&amp;size=25
