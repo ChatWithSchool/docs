@@ -1,5 +1,5 @@
 <!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ספרינט 2: סכמות ו-seed</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+<title>סכמות ו-seed</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
 :root{--ink:#16202E;--ink2:#4A5568;--paper:#F6F7F9;--card:#FFFFFF;--line:#D8DDE6;--wire:#8A94A6;--wirebg:#F1F3F7;--accent:#0E5A7E;--accent-soft:#E3F0F6;--warn:#A64B0B;}
 *{box-sizing:border-box}
 html{scroll-padding-top:16px}
@@ -108,24 +108,16 @@ table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
 @media (max-width:640px){.two{grid-template-columns:1fr}}
 </style><style>code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:#EDF0F5;padding:0 5px;border-radius:4px;unicode-bidi:isolate}pre{background:#16202E;color:#F1F3F7;padding:14px 18px;border-radius:8px;overflow-x:auto;font-size:14px;line-height:1.6;text-align:left;direction:ltr}pre code{background:none;padding:0;color:inherit}.track{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}.track div{background:var(--card);border:1.5px solid var(--accent);border-radius:10px;padding:12px 16px}.track div.b{border-color:#C8641A}.toc{background:var(--card);border:1px solid var(--line);padding:12px 18px;margin:16px 0}@media (max-width:640px){.track{grid-template-columns:1fr}}</style>
 </head><body><div class="wrap"><nav class="topnav"><a href="../index.html">מסמכי הפרויקט</a><a href="../spec/index.html">אינדקס המסכים</a></nav>
-<h1>ספרינט 2: סכמות ו-seed, וסרבר א'</h1>
-<p class="lead">איך מתחילות לעבוד בשרת: איך יודעות אילו אוספים לבנות ואילו שדות יש בהם, איפה בונות אותם, ואיזה כללים שומרים.</p>
-
-<div class="track">
-<div><b>מסלול א':</b> השבוע רק חלק א' (סכמות ו-seed). מי שלא סיימה את הקליינט מסיימת אותו קודם. סרבר א' בשבוע הבא.</div>
-<div class="b"><b>מסלול ב':</b> חלק א' עד יום ראשון, ב-PR קטן. מיום שני חלק ב' (סרבר א').</div>
-</div>
-<p class="capt">המורה מודיעה בכיתה באיזה מסלול השבוע. בשני המסלולים מתחילים מחלק א'.</p>
-
-<div class="toc"><b>בעמוד הזה:</b> <a href="#before">לפני שמתחילות</a> · <a href="#what">מה בונים</a> · <a href="#fields">מאיפה השדות</a> · <a href="#where">איפה בונים</a> · <a href="#model">המודל</a> · <a href="#seed">ה-seed</a> · <a href="#rules">הכללים</a> · <a href="#done">הושלם</a> · <a href="#servera">סרבר א'</a> · <a href="#mistakes">טעויות נפוצות</a></div>
-
+<h1>סכמות ו-seed</h1>
+<p class="lead">השלב הראשון בשרת: איך יודעות אילו אוספים לבנות ואילו שדות יש בהם, איפה בונות את המודל ואת ה-seed, ואיזה כללים שומרים.</p>
+<div class="toc"><b>בעמוד הזה:</b> <a href="#before">לפני שמתחילות</a> · <a href="#what">מה בונים</a> · <a href="#fields">מאיפה השדות</a> · <a href="#where">איפה בונים</a> · <a href="#model">המודל</a> · <a href="#seed">ה-seed</a> · <a href="#rules">הכללים</a> · <a href="#done">מתי זה גמור</a> · <a href="#mistakes">טעויות נפוצות</a></div>
 <h2 id="before">לפני שמתחילות (פעם אחת)</h2>
 <ol class="plain">
 <li><b>MongoDB רץ על המחשב.</b> מתקינות MongoDB Community Server גרסה 7.0 ל-Windows (<a href="https://www.mongodb.com/try/download/community">הורדה</a>), עם ברירות המחדל ועם הסימון "Install MongoD as a Service". חלופות: Docker (<code>docker compose up -d</code>), או MongoDB Atlas בענן.</li>
 <li><b>השרת רץ:</b> בתיקייה <code>school-server</code> מריצות <code>npm install</code>, <code>cp .env.example .env</code>, <code>npm run seed</code> ו-<code>npm run dev</code>.</li>
 <li><b>רואות את הנתונים:</b> מתקינות ב-VS Code את התוסף <b>MongoDB for VS Code</b>, לוחצות על העלה הירוק, ואז Add Connection ומדביקות <code>mongodb://localhost:27017</code>. בחלונית CONNECTIONS פותחות <code>school</code> ואוסף.</li>
 <li id="swagger"><b>פותחות את החוזה כ-Swagger:</b> מתקינות ב-VS Code את התוסף <b>OpenAPI (Swagger) Editor</b>, ופותחות את <code>school-server/openapi/openapi.yaml</code>. לוחצות בתוך הקובץ ואז <code>Shift+Alt+P</code> (או <code>Ctrl+Shift+P</code> ובוחרות <code>OpenAPI: show preview</code>). נפתח לצד הקובץ עמוד עם כל ה-endpoints, ולמטה, תחת Schemas, כל הסכמות. בפעם הראשונה בוחרות Swagger UI. הסרגל השמאלי של התוסף (סמל OpenAPI) מציג עץ של Paths ו-Schemas.</li>
-<li id="reference"><b>עוברות על מודול ההדרכה</b> <code>school-server/src/modules/announcements/</code>. זו דוגמה מלאה שעובדת (הודעות הנהלה לצוות, מסך שלא נבנה בגרסה 1), וכל מודול שתבני ייראה כמוה. פותחות ב-VS Code את ארבעת הקבצים, לפי הסדר:<div class="tw"><table><thead><tr><th>קובץ</th><th>מה מחפשות בו</th><th>מתי צריך את זה</th></tr></thead><tbody><tr><td><code>model.ts</code></td><td>השדות, הסוגים, מה חובה, <code>institutionId</code> והאינדקס בסוף הקובץ</td><td>חלק א'</td></tr><tr><td><code>seed.ts</code></td><td>איך מוצאים את מוסד הדוגמה, ואיך <code>updateOne</code> עם <code>upsert: true</code> מונע כפילויות</td><td>חלק א'</td></tr><tr><td><code>routes.ts</code></td><td>ה-GET: <code>authorize</code> בראש, סינון לפי <code>institutionId</code>, עימוד, ומיפוי לצורה של החוזה</td><td>חלק ב'</td></tr><tr><td><code>schema.ts</code> ו-<code>*.test.ts</code></td><td>ולידציה ובדיקות</td><td>סרבר ב' (ספרינט 3)</td></tr></tbody></table></div>ורואות אותו רץ: אחרי <code>npm run seed</code> פותחות בתוסף <code>school</code> ואז <code>announcements</code> (שתי הודעות). אחרי <code>npm run dev</code> מריצות את פקודות ה-<code>curl</code> שבקובץ <code>school-server/docs/new-module.md</code> ("איך בודקים endpoint ידנית"), ורואות את מה ש-<code>routes.ts</code> מחזיר.</li>
+<li id="reference"><b>עוברות על מודול ההדרכה</b> <code>school-server/src/modules/announcements/</code>. זו דוגמה מלאה שעובדת (הודעות הנהלה לצוות, מסך שלא נבנה בגרסה 1), וכל מודול שתבני ייראה כמוה. פותחות ב-VS Code את ארבעת הקבצים, לפי הסדר:<div class="tw"><table><thead><tr><th>קובץ</th><th>מה מחפשות בו</th><th>מתי צריך את זה</th></tr></thead><tbody><tr><td><code>model.ts</code></td><td>השדות, הסוגים, מה חובה, <code>institutionId</code> והאינדקס בסוף הקובץ</td><td>סכמות ו-seed</td></tr><tr><td><code>seed.ts</code></td><td>איך מוצאים את מוסד הדוגמה, ואיך <code>updateOne</code> עם <code>upsert: true</code> מונע כפילויות</td><td>סכמות ו-seed</td></tr><tr><td><code>routes.ts</code></td><td>ה-GET: <code>authorize</code> בראש, סינון לפי <code>institutionId</code>, עימוד, ומיפוי לצורה של החוזה</td><td>סרבר א'</td></tr><tr><td><code>schema.ts</code> ו-<code>*.test.ts</code></td><td>ולידציה ובדיקות</td><td>סרבר ב' (ספרינט 3)</td></tr></tbody></table></div>ורואות אותו רץ: אחרי <code>npm run seed</code> פותחות בתוסף <code>school</code> ואז <code>announcements</code> (שתי הודעות). אחרי <code>npm run dev</code> מריצות את פקודות ה-<code>curl</code> שבקובץ <code>school-server/docs/new-module.md</code> ("איך בודקים endpoint ידנית"), ורואות את מה ש-<code>routes.ts</code> מחזיר.</li>
 </ol>
 <p class="capt">הרצת seed ולא רואה נתונים? ייתכן שאצלך רצים שני שרתי MongoDB (גם התקנה ב-Windows וגם Docker), ואת מסתכלת על השרת השני. בחרי אחד מהם ועצרי את האחר.</p>
 
@@ -162,7 +154,7 @@ table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
 <pre><code>git switch dev &amp;&amp; git pull
 git switch -c feature/PEDB-12-I08-schema     # project key, Jira task number, screen, stage
 npm run new:module -- foo --screen I08       # the module name from the screen page</code></pre>
-<p>שם המודול המוצע כתוב בעמוד המסך. הפקודה יוצרת את <code>src/modules/foos/</code> עם <code>model.ts</code>, <code>schema.ts</code>, <code>routes.ts</code>, <code>seed.ts</code> ובדיקה. בחלק א' עובדות רק על <b>model.ts</b> ועל <b>seed.ts</b>.</p>
+<p>שם המודול המוצע כתוב בעמוד המסך. הפקודה יוצרת את <code>src/modules/foos/</code> עם <code>model.ts</code>, <code>schema.ts</code>, <code>routes.ts</code>, <code>seed.ts</code> ובדיקה. בשלב הזה עובדות רק על <b>model.ts</b> ועל <b>seed.ts</b>. את <code>routes.ts</code> ממלאות בסרבר א'.</p>
 <ul class="plain">
 <li>אין למסך אוסף פרטי? מוחקות את <code>model.ts</code> שנוצר ומייבאות מ-<code>../../models</code>. אחרת השרת לא יעלה, כי אותו מודל ייוצר פעמיים.</li>
 <li>שני המסכים שלך משתמשים באותו אוסף פרטי? בונים להם מודול אחד. זה כתוב בעמוד המסך.</li>
@@ -245,7 +237,7 @@ export async function seed(): Promise&lt;void&gt; {
 <tr><td>שינוי ב-<code>openapi.yaml</code> רק בפגישת ראשי הצוותות</td><td>הקליינט והשרת חייבים לדבר באותה שפה</td></tr>
 </tbody></table></div>
 
-<h2 id="done">מתי חלק א' גמור</h2>
+<h2 id="done">מתי זה גמור</h2>
 <ul class="check">
 <li>המודל עובר <code>npm run typecheck</code>, והשדות תואמים לחוזה</li>
 <li><code>npm run seed</code> רץ פעמיים, והמספרים לא משתנים</li>
@@ -254,30 +246,13 @@ export async function seed(): Promise&lt;void&gt; {
 <li><code>npm run verify</code> ירוק, ו-PR קטן ל-<code>dev</code> עם ריוויו של חברה</li>
 </ul>
 
-<h2 id="servera">חלק ב': סרבר א' (endpoints לקריאה)</h2>
-<p class="banner infra">מתחילות רק אחרי שה-PR של חלק א' מוזג: במסלול ב' מיום שני, ובמסלול א' בשבוע הבא.</p>
-<ol class="plain">
-<li><b>1. מוצאות את ה-GET שלך:</b> בעמוד המסך, בטבלה "ה-endpoints בחוזה", בשורות שהשלב שלהן הוא "סרבר א'".</li>
-<li><b>2. כותבות את ה-route ב-routes.ts</b> (התבנית כבר שם): <code>authorize('&lt;מסך&gt;', 'read')</code> בראש כל route, סינון לפי <code>institutionId: req.user!.institutionId</code>, ועימוד עם <code>parsePagination</code> ו-<code>toPage</code> כשהתגובה בחוזה היא <code>...Page</code>.</li>
-<li><b>3. ממפות לצורה שבחוזה:</b> <code>id: String(doc._id)</code>, ובלי שדות פנימיים כמו <code>institutionId</code> או <code>__v</code>.</li>
-<li><b>4. בודקות:</b> לפחות בדיקה אחת לכל endpoint (בלי טוקן מקבלים 401, ועם טוקן מקבלים את מבנה החוזה), ובדיקה ידנית עם <code>curl</code>.</li>
-</ol>
-<p>"מוגבלת לשלו" בטבלת ההרשאות בעמוד המסך: מסננים לפי הכיתות, המקצועות או הילדים של המשתמש, עם <code>services/scope.ts</code>. את הכתיבה (POST, PUT ו-DELETE) ואת הולידציה בונים בסרבר ב', בספרינט 3.</p>
-<ul class="check">
-<li>ה-endpoints זהים לחוזה: נתיב, פרמטרים ומבנה התגובה</li>
-<li>עימוד, מיון וסינון לפי החוזה</li>
-<li>בדיקת הרשאה וסינון לפי מוסד</li>
-<li>בדיקה לכל endpoint, ו-<code>npm run verify</code> ירוק</li>
-</ul>
-
 <h2 id="mistakes">טעויות נפוצות</h2>
 <div class="tw"><table><thead><tr><th>הטעות</th><th>התיקון</th></tr></thead><tbody>
 <tr><td>בונות מחדש אוסף שכבר קיים בליבה</td><td>בודקות בעמוד המסך מה מייבאים, ומוחקות את <code>model.ts</code> שנוצר</td></tr>
 <tr><td><code>create()</code> ב-seed, ואחרי הרצה שנייה יש כפילויות</td><td><code>updateOne</code> עם <code>upsert: true</code> לפי מפתח טבעי</td></tr>
 <tr><td><code>new Date()</code> לתאריך של יום</td><td>מחרוזת <code>'YYYY-MM-DD'</code>, ולהיום: <code>toDateOnly(new Date())</code></td></tr>
 <tr><td>שדה ריק נשאר <code>undefined</code></td><td><code>default: null</code> במודל</td></tr>
-<tr><td>מחזירות את המסמך של Mongoose כמו שהוא (<code>_id</code>, <code>__v</code>, <code>institutionId</code>)</td><td>ממפות לצורה שבחוזה</td></tr>
 <tr><td>מחכות למפתחת אחרת</td><td>אין למה לחכות: כל מה שמשותף כבר מוכן. נתקעת? 20 דקות לבד, ואז שאלה ב-Slack</td></tr>
 </tbody></table></div>
-<div class="foot"><span><a href="../index.html">› מסמכי הפרויקט</a></span><span><a href="../spec/index.html">אינדקס המסכים ‹</a></span></div>
+<div class="foot"><span><a href="../index.html">› מסמכי הפרויקט</a></span><span><a href="server-a.html">השלב הבא: סרבר א' ‹</a></span></div>
 </div></body></html>
