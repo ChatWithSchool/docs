@@ -117,6 +117,7 @@ table{min-width:480px}.tw{overflow-x:auto;max-width:100%}
 <li>ה-PR של <a href="schemas-seed.html">הסכמות וה-seed</a> של המסך מוזג ל-<code>dev</code>, ו-<code>npm run seed</code> ממלא את הנתונים.</li>
 <li>השרת רץ על המחשב (<a href="schemas-seed.html#before">ההתקנה</a>).</li>
 <li id="swagger"><b>פותחות את החוזה כ-Swagger:</b> מתקינות ב-VS Code את התוסף <b>OpenAPI (Swagger) Editor</b>, ופותחות את <code>school-server/openapi/openapi.yaml</code>. לוחצות בתוך הקובץ ואז <code>Shift+Alt+P</code> (או <code>Ctrl+Shift+P</code> ובוחרות <code>OpenAPI: show preview</code>). נפתח לצד הקובץ עמוד עם כל ה-endpoints, ולמטה, תחת Schemas, כל הסכמות. בפעם הראשונה בוחרות Swagger UI. הסרגל השמאלי של התוסף (סמל OpenAPI) מציג עץ של Paths ו-Schemas.</li>
+<li id="postman-setup"><b>מתקינות את Postman ב-VS Code (פעם אחת):</b> בו בודקות את ה-endpoints בשלב 4. פותחות את התוספים (<code>Ctrl+Shift+X</code>), מחפשות <b>Postman</b>, ומתקינות את התוסף של Postman (עם סימן המאומת). בסרגל השמאלי לוחצות על סמל Postman ואז <b>Sign In</b>: נפתח הדפדפן, ובו לוחצות <b>Create Free Account</b>, נרשמות עם המייל (או עם חשבון Google) ומאשרות את המייל שמגיע. בסוף מאשרות לדפדפן לחזור ל-VS Code. תוכנית חינמית מספיקה.</li>
 <li>קראת את <code>routes.ts</code> במודול ההדרכה <code>school-server/src/modules/announcements/</code>. זו התבנית ש-<code>new:module</code> יוצר.</li>
 </ul>
 
@@ -168,7 +169,20 @@ if (req.accessLevel === 'scoped') {
 
 <h2 id="test">שלב 4: בדיקה ידנית</h2>
 <ul class="plain">
-<li><b>בדיקה ידנית:</b> <code>npm run dev</code>, ואז <code>curl</code> עם טוקן. הפקודות המוכנות בקובץ <code>school-server/docs/new-module.md</code>, בסעיף "איך בודקים endpoint ידנית".</li>
+<li id="postman"><b>בדיקה ידנית ב-Postman:</b> מריצות <code>npm run dev</code>, וכותבות את הבקשות בעצמן, לפי החוזה.
+<ol>
+<li><b>התחברות:</b> <b>New HTTP Request</b>, בוחרות <code>POST</code> וכותבות <code>http://localhost:4000/api/auth/login</code>. בלשונית <b>Body</b> בוחרות <b>raw</b> ואז <b>JSON</b>, ומדביקות:
+<pre><code>{
+  "email": "yuval.mizrahi@school.example",
+  "password": "Demo1234!"
+}</code></pre>
+לוחצות <b>Send</b>, ומעתיקות מהתשובה את הערך של <code>token</code> (בלי המירכאות).</li>
+<li><b>הבקשה שלך:</b> <b>New HTTP Request</b>, בוחרות את ה-method והנתיב מהחוזה, למשל <code>GET http://localhost:4000/api/announcements?page=1&amp;size=10</code>. בלשונית <b>Authorization</b> בוחרות <b>Bearer Token</b> ומדביקות את הטוקן. לוחצות <b>Send</b>.</li>
+<li><b>בודקות את התשובה:</b> הסטטוס, ושהמבנה זהה לחוזה (<code>items</code>, <code>total</code>, <code>page</code>, <code>size</code>).</li>
+<li><b>שומרות:</b> <code>Ctrl+S</code> לכל בקשה, לתוך collection בשם המסך שלך (למשל <code>S01-serverA</code>). בפעם הבאה רק פותחות ולוחצות Send.</li>
+</ol>
+הטוקן תקף לזמן מוגבל: כשמקבלות <code>401</code>, שולחות שוב את ההתחברות ומדביקות את הטוקן החדש.</li>
+<li><b>בודקות גם שגיאות:</b> בלי טוקן מקבלים <code>401</code>, ובמשתמש בלי הרשאה למסך מקבלים <code>403</code>.</li>
 <li><b>ואז:</b> <code>npm run verify</code> ו-PR קטן ל-<code>dev</code>.</li>
 </ul>
 
@@ -177,7 +191,7 @@ if (req.accessLevel === 'scoped') {
 <li>ה-endpoints זהים לחוזה: נתיב, פרמטרים ומבנה התגובה</li>
 <li>עימוד, מיון וסינון לפי החוזה</li>
 <li><code>authorize</code> בכל route, סינון לפי מוסד, וסינון "מוגבלת לשלו" כשהוא נדרש</li>
-<li>בדקת כל endpoint ידנית עם <code>curl</code>, ו-<code>npm run verify</code> ירוק</li>
+<li>בדקת כל endpoint ידנית ב-Postman, ו-<code>npm run verify</code> ירוק</li>
 </ul>
 <p class="capt">את הכתיבה (POST, PUT ו-DELETE), הולידציה ב-<code>schema.ts</code> וההרשאות המלאות בונים בסרבר ב'.</p>
 
